@@ -19,14 +19,22 @@
   <a href="#translations">Translations</a> of this page
 </p> -->
 
-<h3>Archimedes</h3>
+
 
 <!-- When you replace this graphic, make sure you change -->
 <!-- the link to also point to the correct HTML page. -->
 <!-- If you make a new graphic for this page, make sure it -->
 <!-- has a corresponding entry in /graphics/graphics.html. -->
 <p>
-  <a href="/graphics/agnuhead.html"><img src="/graphics/gnu-head-sm.jpg" alt=" [image of the Head of a GNU] " height="122" width="129"/></a>
+  <!-- <a href="/graphics/agnuhead.html"><img src="/graphics/gnu-head-sm.jpg" alt=" [image of the Head of a GNU] " height="122" width="129"/></a> -->
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<tr>
+<td width="33%" height="33%" align="center" valign="middle"><a href="graphics/energy.png"><img src="graphics/energy-small.jpg" width="200" height="154" name="energy" alt="energy" /></a></td>
+<td width="33%" height="33%" align="center" valign="middle"><h3>Archimedes</h3></td>
+<td width="33%" height="33%" align="center" valign="middle"><a href="graphics/potential.png"><img src="graphics/potential-small.jpg" width="200" height="193" name="potential" alt="potential" /></a></td>
+</tr>
+</table>  
+  
 </p>
 
 <hr/>
@@ -54,10 +62,6 @@
   <a href="#TOCintroduction" id="introduction">Introduction to Archimedes</a>
 </h4>
 
-<!-- <p>
-  This is a web page about Archimedes. GNU Archimedes is a tool for development of semiconductor devices, incorporating some intensive mathematics.
-</p> -->
-
 <p>GNU/Archimedes is the GNU package for the design and simulation of submicron
 semiconductor devices. It is a 2D Monte Carlo simulator which can take into
 account all the relevant quantum effects, thank to the implementation of the
@@ -67,10 +71,40 @@ Bohm effective potential method.</p>
 script, which makes, in this sense, GNU/Archimedes a powerfull tool for the
 simulation of quite general semiconductor devices.</p>
 
-<p>In this first release, GNU/Archimedes is only able to simulate electrons in
-Silicon devices, but a second release is in preparation which is able to
-simulate electrons and holes in Silicon and GaAs (this version will be released
-as soon as possible).</p>
+<p>In the present release, GNU/Archimedes is able to simulate electrons in Silicon
+and GaAs (Gamma and L-valleys) devices, and in the next release, which is in
+preparation, it will be able to simulate holes in Silicon (this version will be
+released as soon as possible).</p>
+
+
+<h5>The Scientifical and Industrial Motivations</h5>
+
+<p>In today semiconductor technology, the miniaturization of devices is more and more progressing. In this context, it is easy to see that numerical simulations play an important role at every level of device manufacture. In fact, the cost of designing and physically constructing prototypes for VLSI semiconductor devices is very high and without the availability of advanced simulators the efforts for devices miniaturization would, likely, be brought to a halt. From assessing the performance of individual transistors, to circuits and systems, and, consequently, with the promise of improved device performance, industries are encouraged to keep on miniaturizing with lower manufacture costs.
+</p>
+<p>But, unfortunately, such simulations are not whithout their challenges... A first consequence of device miniaturization is that simulations of submicron semicondutor devices requires advanced transport models. Because of the presence of very high and rapidly varying electric field, phenomena occur which cannot be described by means of the well-known drift-diffusion models, which do not incorporate energy as a dynamical variable. That is why some generalization has been sought in order to obtain more physically accurate models, like energy-transport and hydrodynamical models. The energy-transport models which are implemented in commercial simulators are based on phenomenological constitutive equations for the particle flux and energy flux depending on a set of parameters which are fitted to homogeneous bulk material Monte Carlo simulations. So, this is not, certainly, a satisfactory physical description of the internal electronic dynamics in a semiconductor device.
+</p>
+<p>As current device technologies quickly approach the scales whereby quantum effects due to strong confinement of carriers and direct source-drain tunneling will begin to dominate, new simulation techniques are required in order to fully understand and acurately simulate the physics behind the technology operation. 
+</p>
+<p>Of all the simulation methods currently employed, ensemble Monte Carlo has always been, both in the accademic and industrial community, the most vigorous and trusted method for device simulation, as it is proven to be reliable and predictive, as one can easily see from the vast bibliography on this subject. However, as Monte Carlo relies on the particle nature of the electron (in fact we consider an electron like a 'biliard ball'), quantum effects associated with the wave-like nature of electrons cannot fully incorporated into the actual simulators, i.e. the ensemble Monte Carlo have to be lightly (or strongly, it depends on the point of view and on the methods implemented...) modified to take into account the quantum effects, at least at a first order of approximation, which is certainly enough to take into account correctly all the relevant quantum effects present in the present-day semiconductor devices (till 2015 probably...). In order to take into account the wave-like nature of electrons we use a recently introduced quantum theory, the so-called Bohm effective potential theory.
+</p>
+<p>So it is challenging and very interesting to develop such a code for 2D quantum submicron semiconductor devices. This is why I have decided to implement this code, but these are not the only motivations... 
+</p>
+
+<h5>The Ethical Motivations</h5>
+
+<p>The very sad situation you quickly observe working in a semiconductor industry, but also in all places in which researches about semiconductor devices are made, the only codes for simulation you can find are not free and are proprietary codes. That is a very bad situation because, at the present time, if you need to develop your own code for the purpose of simulating a device it is IMPOSSIBLE to obtain an advanced one in a short time, and, trust me, this is EXTREMELY BAD for scientific research... (Immagine if you had to re-discover the Newtonian laws every time you need them...) So, you can find a huge amount of papers describing a lot of numerical methods for simulating, in a very advanced way, semiconductor devices (even in the quantum case), but nobody will give you a code on which you can construct your own method (with the unlikely exception that at least one of the programmers is a friend of yours :) ).
+</p>
+<p>Even worst, if you are a semiconductor device designer and you want to simulate "realistically" a new device, you have to pay (trust me, at very high costs!) a BINARY (just a binary and not the code!) from some well-known software industry. This binary will certainly have some bugs (because it is coded by humans which are not perfect...) and you will never have the possibility of fix them on your own. Of course, you can write to the software house and tell them that there is a bug, but, how many time do you will wait for a new release without those bugs? I don't think it will be a short time...
+</p>
+<p>My impression is that, after a long research on the Web for a Free Software dealing with advanced 2D semiconductor device simulation, there was not a free code for the purpose of semiconductor devices simulation (i mean under GPL license). To be sure about it, I asked to the great Richard Stallman (by mail) if it will be worth to do a code like this and he encouraged me to code it, because there wasn't a code like this as free. So I decided to write this code.. 
+</p>
+
+<h5>Do you want to support <b>GNU/Archimedes</b></h5>
+<p><b>GNU/Archimedes</b> has been developed in my free time and it took a huge amount of time for the development of a trustable and predictive code, a code which can certainly be an alternative to the proprietary simulation programs used in industry and/or research (certainly a better alternative if you to use a code on which construct your own code/method). So if you use it and you like it and you are an industry researcher, a university researcher, or a researcher in an other organisation, (or if you just want to encourage my effort in doing something important for the scientifical/industrial community) please think about the possibility of buying my DISTRIBUTION, in order to support and encourage my effort of making new versions of <b>GNU/Archimedes</b>. It is very important for the community and for the future of the technology and science to support Free Software, so, in the case you want the distribution or you just want to make a donation write to me at :
+sellier@dmi.unict.it</p>
+<p>You will receive the distribution which means that you will receive the last version of the printed manual along with the last version of <b>GNU/Archimedes</b> code (SOURCES and binaries). Furthermore, if you give your email address, you will be informed by the author (me) in case of new downloadable releases :) 
+</p>
+
 
 <h4>
   <a href="#TOCdownloading" id="downloading">Downloading Archimedes</a>
@@ -89,13 +123,11 @@ as soon as possible).</p>
   <a href="#TOCdocumentation" id="documentation">Documentation</a>
 </h4>
 
-<p>
-  Archimedes documentation can be found at <a href="manual/">manual subdirectory</a> where you can find the pdf and source (tex files in a tarball) versions.
-<!--   <a href="http://www.gnu.org/manual/manual.html">http://www.gnu.org/manual/manual.html</a>.
-  You may also find more information about Archimedes by looking at 
-  <em>/usr/doc/archimedes/</em> or <em>/usr/local/doc/archimedes/</em> or by looking
-  at man pages (<em>man archimedes</em> at the shell prompt) on your system. -->
-</p>
+<p>The last and complete Archimedes documentation in <a href="manual/archimedes.pdf">PDF</a> and a <a href="archimedes-doc.tar.bz2">tarball</a> containing the source files in latex.</p>
+
+<p>Two examples of simulations :</p>
+<ul><li><a href="manual/SiDIODE.pdf" name="Diode">a 2D Silicon Diode</a></li>
+<li><a href="manual/SiMESFET.pdf" name="MESFET">a 2D Silicon MESFET</a></li></ul>
 
 <h4>
   <a href="#TOClists" id="lists">Mailing Lists/Newsgroups</a>
@@ -243,7 +275,7 @@ this notice is preserved.
 <p>
 Updated:
 <!-- timestamp start -->
-$Date: 2005/02/17 20:50:58 $ $Author: Arabidopsis $
+$Date: 2005/02/20 11:30:36 $ $Author: Arabidopsis $
 <!-- timestamp end -->
 </p>
 </div>
