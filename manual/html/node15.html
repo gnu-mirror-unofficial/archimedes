@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Particle Dynamics</TITLE>
+<META NAME="description" CONTENT="The Particle Dynamics">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node18.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html338"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html334"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html328"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html336"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html339"
+  HREF="node16.html">The Band Structure</A>
+<B> Up:</B> <A NAME="tex2html335"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html329"
+  HREF="node14.html">The Quantum Effects</A>
+ &nbsp; <B>  <A NAME="tex2html337"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00630000000000000000">
+The Particle Dynamics</A>
+</H1>
+The purpose of <B>GNU Archimedes</B> is to solve the Boltzmann or the Wigner equation including the most accurate physical models, i.e. one of the following two equations (depending on including or not the quantum effects)
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+& & \frac{\partial f}{\partial t} +\frac{1}{\hbar} \nabla_{{\bf {k}}} {\cal{E}} \cdot \nabla_{{\bf {x}}} f -\frac{q}{\hbar} {\bf {E}} \cdot \nabla_{{\bf {k}}} f = {\cal{C}}[f] ({\bf {k}},{\bf {x}},t) \\
+& &  \frac{\partial w}{\partial t} +\frac{\hbar {\bf {k}}}{m^*} \nabla_{{\bf {x}}} w \cdot \nabla_{{\bf {x}}} w -\frac{1}{2 \pi \hbar} \int_{\R} d {\bf {k}}^{'} V^{W} ({\bf {k}} - {\bf {k^{'}}}, {\bf {x}}) w({\bf {k^{'}}},{\bf {x}},t) = {\cal{C}}^{W} [w] ({\bf {k}},{\bf {x}},t)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="375" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$\displaystyle \frac{\partial f}{\partial t} +\frac{1}{\hbar} \nabla_{{\bf {k}}}...
+...ar} {\bf {E}} \cdot \nabla_{{\bf {k}}} f = {\cal{C}}[f] ({\bf {k}},{\bf {x}},t)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.3)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="620" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\displaystyle \frac{\partial w}{\partial t} +\frac{\hbar {\bf {k}}}{m^*} \nabla...
+... {x}}) w({\bf {k^{'}}},{\bf {x}},t) = {\cal{C}}^{W} [w] ({\bf {k}},{\bf {x}},t)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+with
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+V^{W} ({\bf {k}},{\bf {x}})= i \int_{\R} d {\bf {\eta}} exp( i {\bf {\eta}} \cdot {\bf {k}} ) ( V({\bf {k}},{\bf {x}} + \frac{{\bf {\eta}}}{2})- V({\bf {k}},{\bf {x}} - \frac{{\bf {\eta}}}{2}))
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="481" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\displaystyle V^{W} ({\bf {k}},{\bf {x}})= i \int_{\R} d {\bf {\eta}} exp( i {\...
+...x}} + \frac{{\bf {\eta}}}{2})- V({\bf {k}},{\bf {x}} - \frac{{\bf {\eta}}}{2}))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $f=f(\bf {k},\bf {x},t)$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$ f=f(\bf {k},\bf {x},t)$">
+ is the Boltzmann probability density function, <!-- MATH
+ $w=w(\bf {k},\bf {x},t)$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$ w=w(\bf {k},\bf {x},t)$">
+ the Wigner probability density function, <IMG
+ WIDTH="16" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \bf {k}$">
+ the particle pseudo-wave vector, <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$ \bf {x}$">
+ the position vector, <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img30.png"
+ ALT="$ \i$">
+ the immaginary unity, <!-- MATH
+ $V(\bf {x},t)$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$ V(\bf {x},t)$">
+ the classical electrostatic potential, <!-- MATH
+ ${\bf {E}} = - \nabla \phi$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$ {\bf {E}} = - \nabla \phi$">
+ the classical electric field, <!-- MATH
+ ${\cal{E}}={\cal{E}}({\bf {k}})$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$ {\cal{E}}={\cal{E}}({\bf {k}})$">
+ the energy band relation. 
+The operators <!-- MATH
+ ${\cal{C}}[f]$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$ {\cal{C}}[f]$">
+ and <!-- MATH
+ ${\cal{C}}^{W}[w]$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$ {\cal{C}}^{W}[w]$">
+ are the collision kernel for the Boltzmann and the Wigner equation respectively. Let us note that both the collision terms are numerically very difficult to simulate (as we will see in the mathematical expression of them) and it has a not very mathematically clear expression (at the present time) for the Wigner equation. 
+These equations have to be simulated in order to get accurate and predictive results.
+
+<P>
+In this section we report the basic models used in our simulations, in order to compute the solution of the two precedent equations.
+
+<P>
+For more informations about the precedent two equations, please refer to the following papers
+
+<OL>
+<LI>E.Wigner, "On the Quantum Correction For Thermodynamics Equilibrium", Physical Review, Vol.40, pp.749-759, 1932
+
+<P>
+</LI>
+<LI>A.Bertoni, P.Bordone, R.Brunetti and C.Jacoboni, "The Wigner function for electron transport in mesoscopic systems", J.Phys.: Condens.Matter 11 (1999), pp.5999-6012
+
+<P>
+</LI>
+<LI>E.Fatemi, F.Odeh, "Upwind finite difference solution of Boltzmann equation applied to electron transport in semiconductor devices", J.Comput.Phys. 108, (1993), pp.209-217
+
+<P>
+</LI>
+<LI>A.Majorana, R.Pidatella, "A finite difference scheme solving the Boltzmann-Poisson system for semiconductor devices, J.Comput.Phys., 174 (2001) pp.649-668
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html340"
+  HREF="node16.html">The Band Structure</A>
+<LI><A NAME="tex2html341"
+  HREF="node17.html">The Drift Process</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html338"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html334"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html328"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html336"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html339"
+  HREF="node16.html">The Band Structure</A>
+<B> Up:</B> <A NAME="tex2html335"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html329"
+  HREF="node14.html">The Quantum Effects</A>
+ &nbsp; <B>  <A NAME="tex2html337"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

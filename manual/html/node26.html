@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Coupling Simplified MEP model and Monte Carlo method</TITLE>
+<META NAME="description" CONTENT="Coupling Simplified MEP model and Monte Carlo method">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node25.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html467"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html463"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html459"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html465"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html468"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Up:</B> <A NAME="tex2html464"
+  HREF="node25.html">The Simplified MEP Model</A>
+<B> Previous:</B> <A NAME="tex2html460"
+  HREF="node25.html">The Simplified MEP Model</A>
+ &nbsp; <B>  <A NAME="tex2html466"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00671000000000000000">
+Coupling Simplified MEP model and Monte Carlo method</A>
+</H2>
+
+<P>
+In this section we show, in a cursory fashion, how it is possible to use the MEP simulation results to obtain faster Monte Carlo simulation.
+<BR>
+The method is surprisingly simple and gives very fast and accurate results as it will be possible to see in the example reported in a next chapter. First of all, we simulate a device by means of the simplified MEP model. When the simulation reaches the stationary solution, we save it and use it as a starting point for the Monte Carlo simulation. What it is done in <B>GNU Archimedes</B> is very simple. It uses the electron density, the potential, and what is the most important, the electron energy as a starting point. Concerning the energy as a starting point, it is very easy but, surprinsingly, works very well. When we start the Monte Carlo simulation, we usually assign an electron energy which is proportional to <IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.png"
+ ALT="$ K_B T_L$">
+, i.e. related to the lattice energy. Now, the only thing to do is to assign to the electrons the energy present in the cell <IMG
+ WIDTH="28" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img106.png"
+ ALT="$ i,j$">
+ which has been computed by means of simplified MEP model. Then we assign the same potential and the same density computed previously by MEP. The results are very interesting, as you will see in a next chapter in which we report it, and are the subject of a paper under preparation.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html467"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html463"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html459"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html465"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html468"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Up:</B> <A NAME="tex2html464"
+  HREF="node25.html">The Simplified MEP Model</A>
+<B> Previous:</B> <A NAME="tex2html460"
+  HREF="node25.html">The Simplified MEP Model</A>
+ &nbsp; <B>  <A NAME="tex2html466"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

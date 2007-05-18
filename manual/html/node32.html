@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Numerical Resolution of the NSP Equation</TITLE>
+<META NAME="description" CONTENT="Numerical Resolution of the NSP Equation">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node31.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html544"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html540"
+  HREF="node31.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html536"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html542"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html545"
+  HREF="node33.html">Electric Field Calculation</A>
+<B> Up:</B> <A NAME="tex2html541"
+  HREF="node31.html">The Non-Stationary Poisson Equation</A>
+<B> Previous:</B> <A NAME="tex2html537"
+  HREF="node31.html">The Non-Stationary Poisson Equation</A>
+ &nbsp; <B>  <A NAME="tex2html543"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00741000000000000000">
+Numerical Resolution of the NSP Equation</A>
+</H2>
+
+<P>
+In the context of finite-difference approximations, we can trivially write
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+& & \frac{\partial \phi}{\partial t} (x_i,y_j) = \frac{\phi^{n+1}_{i,j}-\phi^n_{i,j}}{\Delta t} \\
+& & \nabla^2 \phi (x_i,y_j,t^n) = \frac{\phi_{i+1,j}^n - 2 \phi_{i,j}^n + \phi_{i-1,j}^n}{\Delta x^2} + \frac{\phi_{i,j+1}^n - 2 \phi_{i,j}^n + \phi_{i,j-1}^n}{\Delta y^2}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="202" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.png"
+ ALT="$\displaystyle \frac{\partial \phi}{\partial t} (x_i,y_j) = \frac{\phi^{n+1}_{i,j}-\phi^n_{i,j}}{\Delta t}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6.7)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="513" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$\displaystyle \nabla^2 \phi (x_i,y_j,t^n) = \frac{\phi_{i+1,j}^n - 2 \phi_{i,j}...
+...elta x^2} + \frac{\phi_{i,j+1}^n - 2 \phi_{i,j}^n + \phi_{i,j-1}^n}{\Delta y^2}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+where <!-- MATH
+ $\phi^n_{i,j}$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$ \phi^n_{i,j}$">
+ is the potential computed at time <!-- MATH
+ $t^n=t_i + n \Delta t$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.png"
+ ALT="$ t^n=t_i + n \Delta t$">
+, in the point <IMG
+ WIDTH="60" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.png"
+ ALT="$ (x_i,y_j)$">
+.
+
+<BR>
+Applying these approximations to the NSP equation, one get the following numerical scheme
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\phi^{n+1}_{i,j} = \phi^n_{i,j} + \Delta t (- \epsilon_{i,j} (\frac{\phi_{i+1,j}^n - 2 \phi_{i,j}^n + \phi_{i-1,j}^n}{\Delta x^2} + \frac{\phi_{i,j+1}^n - 2 \phi_{i,j}^n + \phi_{i,j-1}^n}{\Delta y^2}) \\
+ - q [ {N_D}_{i,j} - {N_A}_{i,j} - n_{i,j}^n + p_{i,j}^n] )
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="820" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img136.png"
+ ALT="$\displaystyle \phi^{n+1}_{i,j} = \phi^n_{i,j} + \Delta t (- \epsilon_{i,j} (\fr...
+...}^n}{\Delta y^2}) \\ - q [ {N_D}_{i,j} - {N_A}_{i,j} - n_{i,j}^n + p_{i,j}^n] )$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that the presented scheme is valid only in the case of homogeneous case, but it is easy to generalize it to the heterogeneous structures.
+
+<BR>
+As we can see, once we have the initial conditions and the boundary conditions, it is very easy to implement this equation in a generic semiconductor devices simulator, as it is done in <B>GNU Archimedes</B>.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

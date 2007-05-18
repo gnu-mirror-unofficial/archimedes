@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Introduction</TITLE>
+<META NAME="description" CONTENT="Introduction">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html497"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html493"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html487"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html495"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html498"
+  HREF="node29.html">The Cloud-in-a-Cell algorithm</A>
+<B> Up:</B> <A NAME="tex2html494"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html488"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+ &nbsp; <B>  <A NAME="tex2html496"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00710000000000000000">
+Introduction</A>
+</H1>
+
+<P>
+The most correct and predictive tool for the simulation of an electron gas in solid state matter coupled to its electrostatic potential, should be the Schroedinger-Poisson system. Even if some works have been done on this topic, it remains a very difficult and, somehow, open problem. For more informations, read the following very interesting book
+
+<BR>
+L.Ramdas Ram-Mohan, "Finite Element and Boundary Element Applications in Quantum Mechanics", Oxford University Press, 2002
+
+<BR>
+Important problems still remains in the application of the boundary conditions for the Schroedinger equation, and it is very difficult, and for some process still impossible, to take into account all the relevant scattering events. Furthermore, solving Schroedinger-Poisson system is a very difficult task also from the numerical point of view, since the Schroedinger wave-function to be solved is a function in a <IMG
+ WIDTH="36" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.png"
+ ALT="$ 3 N_e$">
+ space, where <IMG
+ WIDTH="27" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.png"
+ ALT="$ N_e$">
+ is the number of electrons simulated in the device. A solution like this, in realistic devices, is certainly a daunting task from the point of view of computer memory. This is why we use the Monte Carlo method for simulations in <B>GNU Archimedes</B>.
+
+<BR>
+In Monte Carlo electron gas simulations, it is very important to solve correctly both the dynamics of the particles and the computation of the electric field raising from the electron-hole distribution and, eventually, from applied potentials. This is because the charge transport in semiconductor devices is strongly dependent on the electric field, so, if the mentioned electric field is not correctly coupled to the charge dynamics, and correctly computed, all the simulation will be of no utility. This is why, in this chapter, we will explain how the Monte Carlo simulations and the Poisson equation are coupled in <B>GNU Archimedes</B>. This is an important topic for Monte Carlo simulations.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html497"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html493"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html487"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html495"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html498"
+  HREF="node29.html">The Cloud-in-a-Cell algorithm</A>
+<B> Up:</B> <A NAME="tex2html494"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html488"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+ &nbsp; <B>  <A NAME="tex2html496"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

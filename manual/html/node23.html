@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Scattering Process</TITLE>
+<META NAME="description" CONTENT="The Scattering Process">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html435"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html431"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html425"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html433"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html436"
+  HREF="node24.html">The Choice of the</A>
+<B> Up:</B> <A NAME="tex2html432"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html426"
+  HREF="node22.html">Schottky Contacts</A>
+ &nbsp; <B>  <A NAME="tex2html434"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00660000000000000000">
+The Scattering Process</A>
+</H1>
+
+<P>
+At the term of the free flight of a particle, this one scatters with the phonons of the lattice (phonons are the quantization of the motion of ions of the lattice). So, at the end of the free flight, a scattering process have to be choosed. Let us see, how this happens in <B>GNU Archimedes</B>.
+First of all, let us report the list of all scatterings taken into account in <B>GNU Archimedes</B>. We note that, while the self-scattering is computed simply, the probability of scattering for acoustic and optical phonons are computed by means of the quantum mechanics and we will show all the details about them.
+
+<P>
+
+<OL>
+<LI><B>Self-Scattering</B>. We introduce this scattering in order to determine the flight time. It is important to accurately compute this scattering, because it influences all process during the simulation. For more informations about this topic, read the book of K.Tomizawa, "Numerical Simulation of Submicron Semiconductor Devices", Artech House, Boston, London.
+Let us report, briefly, how the self-scattering is introduced in the simulation. If the various scatterings read
+<P><!-- MATH
+ \begin{displaymath}
+{\cal{W}}_i({\cal{E}}(k))
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="80" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$\displaystyle {\cal{W}}_i({\cal{E}}(k)) $">
+</DIV><P>
+</P>
+for <!-- MATH
+ $i=1,2,...,N$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$ i=1,2,...,N$">
+, where <IMG
+ WIDTH="18" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$ \N$">
+ is the number of the scatterings taken into account in the simulation, then we define the following variable <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$ \Gamma$">
+ as follows
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\Gamma = \sum_{i=0}^{N} {\cal{W}}_i ({\cal{E}} (k) )
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="148" HEIGHT="78" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.png"
+ ALT="$\displaystyle \Gamma = \sum_{i=0}^{N} {\cal{W}}_i ({\cal{E}} (k) )$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Then the free flight <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$ \tau$">
+ of a particle will read
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\tau = -\frac{ln(r)}{\Gamma}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="99" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.png"
+ ALT="$\displaystyle \tau = -\frac{ln(r)}{\Gamma}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ r$">
+ is a random number between 0
+ and <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ 1$">
+.
+The factor <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$ \Gamma$">
+ will be used, as we will see at the end of this paragraph, to determine when the self-scattering occurs.
+
+<P>
+</LI>
+<LI><B>Elastic Acoustic Phonon Scattering</B>.
+From quantum mechanics, applying the Fermi's golden rule and some other approximations, it is possible to show that the probability that an electron with a starting pseudo-wave vector <IMG
+ WIDTH="16" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.png"
+ ALT="$ \bf {k}$">
+ scatters with an elastic acoustic phonon and having a final pseudo-wave vector <!-- MATH
+ ${\bf {k}}^{'}$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.png"
+ ALT="$ {\bf {k}}^{'}$">
+, is
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+S({\bf {k}},{\bf {k}}^{'}) = \frac{\pi \Xi^2 k_B T_L}{\hbar c_L \Omega}
+ \frac{k}{q_w {\cal{E}}(k)} \delta (\frac{q_w}{2 k} \pm \cos {\theta}^{'})
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="343" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.png"
+ ALT="$\displaystyle S({\bf {k}},{\bf {k}}^{'}) = \frac{\pi \Xi^2 k_B T_L}{\hbar c_L \Omega} \frac{k}{q_w {\cal{E}}(k)} \delta (\frac{q_w}{2 k} \pm \cos {\theta}^{'})$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img74.png"
+ ALT="$ \Xi$">
+ is a proportionality constant called deformation potential, <IMG
+ WIDTH="23" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.png"
+ ALT="$ c_L$">
+ the elastic constant of the material, <!-- MATH
+ $\theta^{'}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$ \theta^{'}$">
+ the polar angle between the two vectors <IMG
+ WIDTH="16" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.png"
+ ALT="$ {\bf k}$">
+ and <!-- MATH
+ ${\bf k}^{'}$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img78.png"
+ ALT="$ {\bf k}^{'}$">
+, <IMG
+ WIDTH="24" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$ q_w$">
+ the modulus of the phonon wave vector and <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.png"
+ ALT="$ \Omega$">
+ the volume of the crystal.
+Now integrating on <!-- MATH
+ ${\bf {k}}^{'}$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.png"
+ ALT="$ {\bf {k}}^{'}$">
+ one can easily obtain the probability that an electron of energy <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="$ \cal E$">
+ scatters with an acoustic phonon. This last reads
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+{\cal{W}} ({\bf {k}}) = \frac{2 \pi \Xi^2 k_B T_L}{\hbar c_L} N({\cal{E}}_k)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="213" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.png"
+ ALT="$\displaystyle {\cal{W}} ({\bf {k}}) = \frac{2 \pi \Xi^2 k_B T_L}{\hbar c_L} N({\cal{E}}_k)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $N({\cal E})$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$ N({\cal E})$">
+ is the density of states and reads
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+N({\cal{E}}(k)) = \frac{(2 m^*)^{\frac{3}{2}} \sqrt{{\cal{E}}(k)}}{4 \pi^2 \hbar^3}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="216" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$\displaystyle N({\cal{E}}(k)) = \frac{(2 m^*)^{\frac{3}{2}} \sqrt{{\cal{E}}(k)}}{4 \pi^2 \hbar^3}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI><B>Non-Polar Optical Phonon Scattering</B>.
+Concerning the non-polar optical phonon, following the same rules as before we get the two probabilities
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+& & S({\bf {k}},{\bf {k}}^{'}) = \frac{\pi D_{opt}^2}{\rho \omega_0 \Omega}
+   (n_0 +\frac{1}{2} \mp \frac{1}{2}) \delta (\frac{\hbar^2 q_w^2}{2 m^*} \pm \frac{\hbar^2 k q_w \cos \theta^{'}}{m^*} \mp \hbar \omega_0)\\
+& & {\cal{W}} ({\bf {k}}) = \frac{\pi D_{opt}^2}{\rho \omega_0} (n_0 + \frac{1}{2} \mp \frac{1}{2}) N({\cal{E}}(k) \pm \hbar \omega_0)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="486" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$\displaystyle S({\bf {k}},{\bf {k}}^{'}) = \frac{\pi D_{opt}^2}{\rho \omega_0 \...
+...q_w^2}{2 m^*} \pm \frac{\hbar^2 k q_w \cos \theta^{'}}{m^*} \mp \hbar \omega_0)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.22)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="353" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$\displaystyle {\cal{W}} ({\bf {k}}) = \frac{\pi D_{opt}^2}{\rho \omega_0} (n_0 + \frac{1}{2} \mp \frac{1}{2}) N({\cal{E}}(k) \pm \hbar \omega_0)$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+where <IMG
+ WIDTH="39" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.png"
+ ALT="$ D_{opt}$">
+ is the optical deformation potential constant, <IMG
+ WIDTH="24" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.png"
+ ALT="$ \omega_0$">
+ the phonon angular frequency, <IMG
+ WIDTH="23" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.png"
+ ALT="$ n_0$">
+ a value almost equal to the intrinsic density of the material. Pay attention that in <B>GNU Archimedes</B> we take into all the six optical phonons for the Silicon material. For more informations about this topic read the following paper
+C.Jacoboni, L.Reggiani, "The Monte Carlo method for the solution of charge transport insemiconductors with applications to covalent materials", Reviews of Modern Physics, Vol.55, No.3, July 1983
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html437"
+  HREF="node24.html">The Choice of the Scattering</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html435"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html431"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html425"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html433"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html436"
+  HREF="node24.html">The Choice of the</A>
+<B> Up:</B> <A NAME="tex2html432"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html426"
+  HREF="node22.html">Schottky Contacts</A>
+ &nbsp; <B>  <A NAME="tex2html434"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Fast Monte Carlo MESFET simulation</TITLE>
+<META NAME="description" CONTENT="The Fast Monte Carlo MESFET simulation">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node60.html">
+<LINK REL="next" HREF="node63.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html925"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html921"
+  HREF="node60.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html917"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html923"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html926"
+  HREF="node63.html">Acknowledgments</A>
+<B> Up:</B> <A NAME="tex2html922"
+  HREF="node60.html">Example: The MESFET device.</A>
+<B> Previous:</B> <A NAME="tex2html918"
+  HREF="node61.html">The Monte Carlo MESFET</A>
+ &nbsp; <B>  <A NAME="tex2html924"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00920000000000000000">
+The Fast Monte Carlo MESFET simulation</A>
+</H1>
+
+<P>
+In this section we want to show how to obtain faster simulation than the previous section. First of all we simulate the MESFET device by means of the simplified MEP model. This is done by the following script
+<PRE>
+# Silicon MESFET test-1
+# created on 27 feb.2005, J.M.Sellier
+# modified on 05 mar.2005, J.M.Sellier
+# Simplified MEP model
+
+MATERIAL SILICON
+TRANSPORT MEP ELECTRONS
+
+FINALTIME 5.0e-12
+TIMESTEP 0.001e-12
+
+XLENGTH 0.6e-6
+YLENGTH 0.2e-6
+
+XSPATIALSTEP 90
+YSPATIALSTEP 20
+
+# Energy relaxation time
+# ======================
+TAUW 0.4e-12
+
+# Definition of the doping concentration
+# ======================================
+DONORDENSITY    0.       0.         0.6e-6    0.2e-6    1.e23
+DONORDENSITY    0.       0.15e-6    0.1e-6    0.2e-6    3.e23
+DONORDENSITY    0.5e-6   0.15e-6    0.6e-6    0.2e-6    3.e23
+ACCEPTORDENSITY 0.       0.         0.6e-6    0.2e-6    1.e20
+# ACCEPTORDENSITY    0.       0.         0.6e-6    0.2e-6    1.e23
+# ACCEPTORDENSITY    0.       0.15e-6    0.1e-6    0.2e-6    3.e23
+# ACCEPTORDENSITY    0.5e-6   0.15e-6    0.6e-6    0.2e-6    3.e23
+
+# Definition of the various contacts
+# ==================================
+CONTACT DOWN  0.0    0.6e-6 INSULATOR 0.0
+CONTACT LEFT  0.0    0.2e-6 INSULATOR 0.0
+CONTACT RIGHT 0.0    0.2e-6 INSULATOR 0.0
+CONTACT UP    0.1e-6 0.2e-6 INSULATOR 0.0
+CONTACT UP    0.4e-6 0.5e-6 INSULATOR 0.0
+CONTACT UP    0.0    0.1e-6 OHMIC     0.0 3.e23 1.e20
+CONTACT UP    0.2e-6 0.4e-6 SCHOTTKY -0.8
+CONTACT UP    0.5e-6 0.6e-6 OHMIC     1.0 3.e23 1.e20
+
+NOQUANTUMEFFECTS
+MAXIMINI
+# SAVEEACHSTEP
+
+LATTICETEMPERATURE 300.
+
+STATISTICALWEIGHT 100
+MEDIA 500
+
+OUTPUTFORMAT GNUPLOT
+
+# end of MESFET test-1
+</PRE>
+
+<P>
+Then we copy the density, energy and potential files with the following names
+<PRE>
+ density_start.xyz
+ energy_start.xyz
+ potential_start.xyz
+</PRE>
+and run the following script
+<PRE>
+# Silicon MESFET test-1
+# created on 27 feb.2005, J.M.Sellier
+# modified on 05 mar.2005, J.M.Sellier
+# Fast Monte Carlo method
+
+MATERIAL SILICON
+TRANSPORT MC ELECTRONS
+
+FINALTIME 1.e-12
+TIMESTEP 0.001e-12
+
+XLENGTH 0.6e-6
+YLENGTH 0.2e-6
+
+XSPATIALSTEP 90
+YSPATIALSTEP 20
+
+# Energy relaxation time
+# ======================
+TAUW 0.4e-12
+
+# Definition of the doping concentration
+# ======================================
+DONORDENSITY    0.       0.         0.6e-6    0.2e-6    1.e23
+DONORDENSITY    0.       0.15e-6    0.1e-6    0.2e-6    3.e23
+DONORDENSITY    0.5e-6   0.15e-6    0.6e-6    0.2e-6    3.e23
+ACCEPTORDENSITY 0.       0.         0.6e-6    0.2e-6    1.e20
+# ACCEPTORDENSITY    0.       0.         0.6e-6    0.2e-6    1.e23
+# ACCEPTORDENSITY    0.       0.15e-6    0.1e-6    0.2e-6    3.e23
+# ACCEPTORDENSITY    0.5e-6   0.15e-6    0.6e-6    0.2e-6    3.e23
+
+# Definition of the various contacts
+# ==================================
+CONTACT DOWN  0.0    0.6e-6 INSULATOR 0.0
+CONTACT LEFT  0.0    0.2e-6 INSULATOR 0.0
+CONTACT RIGHT 0.0    0.2e-6 INSULATOR 0.0
+CONTACT UP    0.1e-6 0.2e-6 INSULATOR 0.0
+CONTACT UP    0.4e-6 0.5e-6 INSULATOR 0.0
+CONTACT UP    0.0    0.1e-6 OHMIC     0.0 3.e23 1.e20
+CONTACT UP    0.2e-6 0.4e-6 SCHOTTKY -0.8
+CONTACT UP    0.5e-6 0.6e-6 OHMIC     1.0 3.e23 1.e20
+
+NOQUANTUMEFFECTS
+MAXIMINI
+# SAVEEACHSTEP
+
+# Load Electron Initial Data
+LEID
+
+LATTICETEMPERATURE 300.
+
+STATISTICALWEIGHT 100
+MEDIA 500
+
+OUTPUTFORMAT GNUPLOT
+
+# end of MESFET test-1
+</PRE>
+
+<P>
+As the reader can note from the following script, we only need <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img71.png"
+ ALT="$ 1$">
+ picosecond for the Monte Carlo method. This is done because we load the initial conditions from the previous MEP simulation. This is a very fast way to obtain fast Monte Carlo simulations.
+We report, in the following some interesting results.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET10"></A><A NAME="1162"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET MEP Energy Profile computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="681" BORDER="0"
+ SRC="img175.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/MEPenergy.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET11"></A><A NAME="1164"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET Fast Monte Carlo Energy Profile computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="820" HEIGHT="683" BORDER="0"
+ SRC="img176.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/MCenergy.ps, width=18cm,height=15cm, angle=90}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET12"></A><A NAME="1166"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET MEP potential computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="820" HEIGHT="683" BORDER="0"
+ SRC="img177.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/MEPpotential.ps, width=18cm,height=15cm, angle=90}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET13"></A><A NAME="1168"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET Fast Monte Carlo Potential computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="681" BORDER="0"
+ SRC="img178.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/MCpotential.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html925"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html921"
+  HREF="node60.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html917"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html923"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html926"
+  HREF="node63.html">Acknowledgments</A>
+<B> Up:</B> <A NAME="tex2html922"
+  HREF="node60.html">Example: The MESFET device.</A>
+<B> Previous:</B> <A NAME="tex2html918"
+  HREF="node61.html">The Monte Carlo MESFET</A>
+ &nbsp; <B>  <A NAME="tex2html924"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

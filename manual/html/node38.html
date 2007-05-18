@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CONTACT</TITLE>
+<META NAME="description" CONTENT="CONTACT">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node39.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html639"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html635"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html629"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html637"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html640"
+  HREF="node39.html">DONORDENSITY</A>
+<B> Up:</B> <A NAME="tex2html636"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html630"
+  HREF="node37.html">COMMENTS</A>
+ &nbsp; <B>  <A NAME="tex2html638"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00840000000000000000">
+CONTACT</A>
+</H1>
+
+<P>
+When a new device is defined, the user needs to specify where the edges are insulator, where there are ohmic contacts and where the Schottky contacts are positioned. Even, you can have the need of applying a potential on a isulator edge (for simulation purposes). All this definitions are possible by the use of only one command, i.e. <B>CONTACT</B>. Let us describe the syntax of this command.
+<BR>
+This command can be described as follows
+<PRE>
+CONTACT  place  init_pos  fin_pos  kind  pote  dens
+</PRE>
+where <I>place</I> can be one of the following choice
+
+<OL>
+<LI><B>UP</B>. This in invoked when the contact have to be placed on the upper edge of the device.
+</LI>
+<LI><B>DOWN</B>. This in invoked when the contact have to be placed on the bottom edge of the device.
+</LI>
+<LI><B>RIGHT</B>. This in invoked when the contact have to be placed on the right edge of the device.
+</LI>
+<LI><B>LEFT</B>. This in invoked when the contact have to be placed on the left edge of the device.
+</LI>
+</OL>
+Furthermore, <I>init_pos</I> is the initial position of the contact, <I>fin_pos</I> is the final position of the same contact.
+The choice <I>kind</I> can be one of the following
+
+<OL>
+<LI><B>INSULATOR</B>. This is invoked in the case the contact is of insulator type. In this case, the contact will be a "reflective mirror" for the particles, i.e. the particles can not go out or inside the device through that contact.
+</LI>
+<LI><B>OHMIC</B>. This is invoked in the case the contact is of ohmic type. This kind of contact can be considered as a gate through which the particles can go out. Furthermore, it can be considered as a particle reservoir from which particles can go into the device.
+</LI>
+<LI><B>SCHOTTKY</B>. This is invoked in the case the contact is of Schottky type. This kind of contact is the same as the ohmic one with the ecception that this is not a particle reservoir, so this contact is only a absorbing one.
+</LI>
+</OL>
+The choice <I>pote</I> is the potential which is applied to this contact. In the case the edge, or a part of it, is of insulator type and there is no potential applied there, then it have to be put to 0.
+<BR>
+<P>
+The choice <I>dens</I> is the density of the particle reservoir, so it has to be specified only in the ohmic contact case.
+<BR>
+<P>
+When an edge, or part of it, will not be specified by the user, it will be considered as of insulator type with zero potential applied, as default.
+<BR>
+<P>
+Here we report some examples.
+<BR>
+<P>
+If we want to specify that the upper edge is of insulator type, with no applied potential, in a diode with x-direction length 1.0 micron, than the user have to write
+<PRE>
+ CONTACT   0.0   1.0e-6   INSULATOR   0.0
+</PRE>
+
+<P>
+If we want to specify that the left edge is of ohmic type, with zero applied potential and <!-- MATH
+ $\frac{1.e23}{m^3}$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$ \frac{1.e23}{m^3}$">
+, in a diode with y-direction length 0.1 micron, than the user have to write
+<PRE>
+ CONTACT   0.0   0.1e-6   OHMIC   0.0   1.e23
+</PRE>
+
+<P>
+Finally, if a user wants to specify that a part of the upper edge is of Schottky type, with <IMG
+ WIDTH="43" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$ -0.8$">
+ Volts applied potential starting from <!-- MATH
+ $0.2 \times 10^{-6}$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$ 0.2 \times 10^{-6}$">
+ to <!-- MATH
+ $0.4 \times 10^{-6}$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.png"
+ ALT="$ 0.4 \times 10^{-6}$">
+, in a MESFET, than the user have to write
+<PRE>
+ CONTACT   0.2e-6   0.4e-6   SCHOTTKY   -0.8
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html639"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html635"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html629"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html637"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html640"
+  HREF="node39.html">DONORDENSITY</A>
+<B> Up:</B> <A NAME="tex2html636"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html630"
+  HREF="node37.html">COMMENTS</A>
+ &nbsp; <B>  <A NAME="tex2html638"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

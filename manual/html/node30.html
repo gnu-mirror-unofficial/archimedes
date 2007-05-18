@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Stationary Poisson Equation</TITLE>
+<META NAME="description" CONTENT="The Stationary Poisson Equation">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html521"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html517"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html511"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html519"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html522"
+  HREF="node31.html">The Non-Stationary Poisson Equation</A>
+<B> Up:</B> <A NAME="tex2html518"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html512"
+  HREF="node29.html">The Cloud-in-a-Cell algorithm</A>
+ &nbsp; <B>  <A NAME="tex2html520"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00730000000000000000">
+The Stationary Poisson Equation</A>
+</H1>
+
+<P>
+In semiconductor devices, the potential retardation effects are completely negligible so
+
+<OL>
+<LI>We can neglect the computation of the magnetic field (at least for the majority of semiconductor devices, but certainly for the Silicon devices)
+</LI>
+<LI>We can adopt the stationary description of the electric potential, i.e. we select and calculate only the Poisson equation among the set of Maxwell's equations.
+</LI>
+</OL>
+We, thus, report the Poisson equation
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\nabla \cdot [ \epsilon ({\bf {x}}) \nabla \phi ({\bf {x}},t) ] =
+ - q [ N_D({\bf {x}}) - N_A({\bf {x}}) - n({\bf {x}},t) + p({\bf {x}},t)]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="483" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\displaystyle \nabla \cdot [ \epsilon ({\bf {x}}) \nabla \phi ({\bf {x}},t) ] = - q [ N_D({\bf {x}}) - N_A({\bf {x}}) - n({\bf {x}},t) + p({\bf {x}},t)]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Actually, if we have a two-dimensional regular finite-difference grid,
+the discretization of the Poisson will give an algebraic system to solve, which is quite complicated to solve, because the boundary conditions are difficult to implement in a generic simulator such as textbfGNU Archimedes and, furthermore, this algebraic system is consuming from the point of view of computer memory (even if we can use well-known methods applied to sparse matrices).
+
+<BR>
+These reasons have influenced the author of <B>GNU Archimedes</B> to adopt a lightly different approach in the simulation of the electrostatic potential. (And for this, I thanks Vittorio Romano for his excellent advices).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html521"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html517"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html511"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html519"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html522"
+  HREF="node31.html">The Non-Stationary Poisson Equation</A>
+<B> Up:</B> <A NAME="tex2html518"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html512"
+  HREF="node29.html">The Cloud-in-a-Cell algorithm</A>
+ &nbsp; <B>  <A NAME="tex2html520"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

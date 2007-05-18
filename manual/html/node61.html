@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Monte Carlo MESFET simulation</TITLE>
+<META NAME="description" CONTENT="The Monte Carlo MESFET simulation">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node62.html">
+<LINK REL="previous" HREF="node60.html">
+<LINK REL="up" HREF="node60.html">
+<LINK REL="next" HREF="node62.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html915"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html911"
+  HREF="node60.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html905"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html913"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html916"
+  HREF="node62.html">The Fast Monte Carlo</A>
+<B> Up:</B> <A NAME="tex2html912"
+  HREF="node60.html">Example: The MESFET device.</A>
+<B> Previous:</B> <A NAME="tex2html906"
+  HREF="node60.html">Example: The MESFET device.</A>
+ &nbsp; <B>  <A NAME="tex2html914"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00910000000000000000">
+The Monte Carlo MESFET simulation</A>
+</H1>
+
+<P>
+You can find the following example in the official ditribution of <B>GNU Archimedes</B> in the <I>test/MESFET</I> directory.
+<PRE>
+# Silicon MESFET test-1
+# created on 22 sep.2004, J.M.Sellier
+# modified on 09 oct.2004, J.M.Sellier
+
+MATERIAL SILICON
+TRANSPORT MC ELECTRONS
+
+FINALTIME 5.5e-12
+TIMESTEP 0.0015e-12
+
+XLENGTH 0.6e-6
+YLENGTH 0.2e-6
+
+XSPATIALSTEP 96
+YSPATIALSTEP 32
+
+# Definition of the doping concentration
+# ======================================
+DONORDENSITY    0.       0.         0.6e-6    0.2e-6    1.e23
+DONORDENSITY    0.       0.15e-6    0.1e-6    0.2e-6    5.e23
+DONORDENSITY    0.5e-6   0.15e-6    0.6e-6    0.2e-6    5.e23
+ACCEPTORDENSITY 0.       0.         0.6e-6    0.2e-6    1.e20
+
+# Definition of the various contacts
+# ==================================
+CONTACT DOWN  0.0    0.6e-6 INSULATOR 0.0
+CONTACT LEFT  0.0    0.2e-6 INSULATOR 0.0
+CONTACT RIGHT 0.0    0.2e-6 INSULATOR 0.0
+CONTACT UP    0.1e-6 0.2e-6 INSULATOR 0.0
+CONTACT UP    0.4e-6 0.5e-6 INSULATOR 0.0
+CONTACT UP    0.0    0.1e-6 OHMIC     0.0 5.e23
+CONTACT UP    0.2e-6 0.4e-6 SCHOTTKY -0.8
+CONTACT UP    0.5e-6 0.6e-6 OHMIC     1.0 5.e23
+
+NOQUANTUMEFFECTS
+MAXIMINI
+# SAVEEACHSTEP
+
+LATTICETEMPERATURE 300.
+
+STATISTICALWEIGHT 1500
+MEDIA 500
+
+OUTPUTFORMAT GNUPLOT
+
+# end of MESFET test-1
+</PRE>
+
+<P>
+We report in the following pictures (<A HREF="#MESFET1">8.1</A>)-(<A HREF="#MESFET5">8.5</A>)the results obtained by <B>GNU Archimedes</B> release 0.0.4.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET1"></A><A NAME="1152"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET Density Profile computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="679" BORDER="0"
+ SRC="img170.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/density.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET2"></A><A NAME="1154"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET x-component velocity computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="679" BORDER="0"
+ SRC="img171.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/x_velocity.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET3"></A><A NAME="1156"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET y-component velocity computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="679" BORDER="0"
+ SRC="img172.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/y_velocity.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET4"></A><A NAME="1158"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET Electron Energy computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="679" BORDER="0"
+ SRC="img173.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/energy.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="MESFET5"></A><A NAME="1160"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">MESFET Electrostatic Potential computed by <B>GNU Archimedes</B>.</FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="815" HEIGHT="679" BORDER="0"
+ SRC="img174.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=mesfet_pictures/potential.ps, width=18cm,height=15cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

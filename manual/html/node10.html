@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Overview</TITLE>
+<META NAME="description" CONTENT="Overview">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html266"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html262"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html256"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html264"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html267"
+  HREF="node11.html">A First Example: The</A>
+<B> Up:</B> <A NAME="tex2html263"
+  HREF="node9.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html257"
+  HREF="node9.html">Introduction</A>
+ &nbsp; <B>  <A NAME="tex2html265"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00510000000000000000">
+Overview</A>
+</H1>
+
+<P>
+The GNU <B>GNU Archimedes</B> program is a 2D Quantum Monte Carlo simulator for semiconductor devices. At the present time it can simulate the transport of electrons and Holes only in Silicon, Gallium Arsenide and Germanium devices but, in the next versions, i will develop the possibility of choosing some other different materials like InP, GaP and so on (actually the purpose is reaching the possibility of simulating a quite big range of materials belonging to the cubic group IV of the diamond structure and to the III-V semiconductors of the zincblende structure along with all the heterostructures possible). In this version <B>GNU Archimedes</B> can simulate electrons for both Silicon and GaAs material and heavy holes for Silicon. In the future i will also develop the heavy and light holes transport for both Silicon and GaAs.
+
+<P>
+<B>GNU Archimedes</B> uses the well-known ensemble Monte Carlo method for the simulations. It can simulate both the transient and the steady state solution (even if the transient can be quite noisy, due to the statistical approach). The particles dynamics is coupled to the electrostatic potential by means of the simulation of a "non stationary" Poisson equation. This last equation is simulated by a simple, but very robust, finite difference method.
+In this present version of <B>GNU Archimedes</B> you can choose the physics of the various contacts present on the device. So, for example, you can decide if an edge (or a part of it) is an insulator, or a Schottky contact or even an Ohmic one. In addition, the quantum effects are taken into account by means of the recent effective potential method, which is starting to be used by the accademic community, as you can see from scientifical papers. Furthermore, up to the release 0.0.4, you can simulate a simplified MEP (Maximum Entropy Principle) model which is very usefull for making Archimedes faster than the precedent release, as you will see in the next chapters. This is a completely new results which is under publication.
+
+<P>
+All the particles in this code have a `statistical weight' which is made a piecwise-function of the position. You can choose the number of particle used in the simulation, even if this last will vary during the simulation, but it is not allowed to be more than 10 milions. If you want a bigger number you have to change it in the code (modifying the definition of NPMAXIMUM in the file "archimedes.c" and recompiling it). I have choosed to not dynamically allocate the memory because the number of particles in the devices can vary very rapidly (depending on the device structure, obviously) and this can enormousely tax the velocity of the simulation, which is very undesirable in a Monte Carlo simulation!
+
+<P>
+GNU <B>GNU Archimedes</B> was written by Jean Michel Sellier (sellier@dmi.unict.it). Because it is protected by the GNU General Public License, users are free to share and change it. You can download it at the following web page:
+www.gnu.org/software/archimedes
+
+<P>
+Let us see, now, a first example of definition for a device...
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html266"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html262"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html256"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html264"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html267"
+  HREF="node11.html">A First Example: The</A>
+<B> Up:</B> <A NAME="tex2html263"
+  HREF="node9.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html257"
+  HREF="node9.html">Introduction</A>
+ &nbsp; <B>  <A NAME="tex2html265"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

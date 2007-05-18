@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>SAVEEACHSTEP</TITLE>
+<META NAME="description" CONTENT="SAVEEACHSTEP">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html843"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html839"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html833"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html841"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html844"
+  HREF="node56.html">LATTICETEMPERATURE</A>
+<B> Up:</B> <A NAME="tex2html840"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html834"
+  HREF="node54.html">NOMAXIMINI</A>
+ &nbsp; <B>  <A NAME="tex2html842"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION008210000000000000000">
+SAVEEACHSTEP</A>
+</H1>
+
+<P>
+When it is required to simulate the transient behaviour of a semicondutor device, it is very usefull to save all the solutions at each time step of the simulation. In this way, it is possible to create movies which show the transient behaviour of the density, or of the electrostatic potential, for examples. This movies are very good in the comprehension of the transient states of a new semiconductor device. The user have not to run and stop at different time the simulation (which is a very annoying task :) ). The only thing to do is to put the following line in the input file processed by <B>GNU Archimedes</B>
+<PRE>
+ SAVEEACHSTEP
+</PRE>
+This will save all the solution, in the choosed format, with the following convention: the file are named in increasing order, i.e., for density, density001.xyz, density002.xyz, density003.xyz, ... ,density010.xyz and so on. Instead, the last final step will be saved with the suffix '000'.
+
+<BR>
+Pay attention to the fact that the savings of all this informations can be, in some cases (for example, for highly refined grid), computationaly heavy. So use it only in the case it is necessary or not heavy for the simulation, in order to avoid too big run-time.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html843"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html839"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html833"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html841"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html844"
+  HREF="node56.html">LATTICETEMPERATURE</A>
+<B> Up:</B> <A NAME="tex2html840"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html834"
+  HREF="node54.html">NOMAXIMINI</A>
+ &nbsp; <B>  <A NAME="tex2html842"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

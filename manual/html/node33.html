@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Electric Field Calculation</TITLE>
+<META NAME="description" CONTENT="Electric Field Calculation">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html554"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html550"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html546"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html552"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html555"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Up:</B> <A NAME="tex2html551"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html547"
+  HREF="node32.html">Numerical Resolution of the</A>
+ &nbsp; <B>  <A NAME="tex2html553"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00750000000000000000">
+Electric Field Calculation</A>
+</H1>
+
+<P>
+The electric field is easily computed once we have the solution of the static Poisson equation or the NSP equation. The definition of the electric field is as follows
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+{\bf E} (x,y) = - \nabla \phi (x,y)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="172" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.png"
+ ALT="$\displaystyle {\bf E} (x,y) = - \nabla \phi (x,y)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+So, in the context of finite-difference approximations, we compute the electric field in the various cells of the grid as follows
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+{E_x}_{i,j} &=& - \frac{\phi_{i+1,j}- \phi_{i-1,j}}{2 \Delta x} \\
+ {E_y}_{i,j} &=& - \frac{\phi_{i,j+1}- \phi_{i,j-1}}{2 \Delta y}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="42" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$\displaystyle {E_x}_{i,j}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$\displaystyle - \frac{\phi_{i+1,j}- \phi_{i-1,j}}{2 \Delta x}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6.11)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="42" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$\displaystyle {E_y}_{i,j}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="134" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\displaystyle - \frac{\phi_{i,j+1}- \phi_{i,j-1}}{2 \Delta y}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(6.12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+These simple expressions are used in <B>GNU Archimedes</B> and, even if very simple, they are accurated and robust.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

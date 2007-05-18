@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ACCEPTORDENSITY</TITLE>
+<META NAME="description" CONTENT="ACCEPTORDENSITY">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html603"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html599"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html593"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html601"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html604"
+  HREF="node36.html">CIMP</A>
+<B> Up:</B> <A NAME="tex2html600"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html594"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+ &nbsp; <B>  <A NAME="tex2html602"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00810000000000000000">
+ACCEPTORDENSITY</A>
+</H1>
+
+<P>
+In the definition of a new device, even if the holes are considered as fixed in this version of <B>GNU Archimedes</B>, we have to specify the acceptor density, i.e. the spatial distribution of the acceptors in the device. This is done in order to solve correctly the Poisson equation. In fact, this last equation needs both the donor and acceptor distribution, so it is necessary to specify them. If the user does not specify any constant value or distribution of the acceptors, <B>GNU Archimedes</B> will consider that the acceptor distribution is constant on all the device and it is equal to the intrinsic density as default. Furthermore, if the user specify the value of the acceptor distribution only on a part of the device, the restant part will be considered equal to the intrinsic density.
+
+<BR>
+Let us see, now, how to specify the acceptor distribution on a device.
+In <B>GNU Archimedes</B> a sub-domain (but also the entire device) on which we want to specify an acceptor value for the spatial distribution is just a simple rectangle. This means that we can specify the value of the acceptor density on a rectangle (the entire device or a part of it), specifying only five numbers i.e.
+
+<OL>
+<LI>The x-coordinate value of the left-bottom vertex of the rectangle. Let us denote it by <IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$ x_{min}$">
+
+</LI>
+<LI>The y-coordinate value of the left-bottom vertex of the rectangle. Let us denote it by <IMG
+ WIDTH="39" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.png"
+ ALT="$ y_{min}$">
+
+</LI>
+<LI>The x-coordinate value of the right-upper vertex of the rectangle. Let us denote it by <IMG
+ WIDTH="43" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$ x_{max}$">
+
+</LI>
+<LI>The y-coordinate value of the right-upper vertex of the rectangle. Let us denote it by <IMG
+ WIDTH="41" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$ y_{max}$">
+
+</LI>
+<LI>The value of the acceptor density on the rectangular sub-domain. Let us denote it by <IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ N_A$">
+
+</LI>
+</OL>
+Then we will have the acceptor density <IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ N_A$">
+ on the rectangle <!-- MATH
+ $[x_{min},x_{max}] \times [y_{min},y_{max}]$
+ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$ [x_{min},x_{max}] \times [y_{min},y_{max}]$">
+.
+<BR>
+<P>
+An example will clarify everything.
+
+<P>
+<PRE>
+# acceptor spatial distribution on the rectangle [0.0,1.0e-6]x[0.0,0.1e-6]
+# acceptor density on this rectangle is equal to 1.e20
+
+ACCEPTORDENSITY 0.       0.    1.0e-6    0.1e-6    1.e20
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html603"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html599"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html593"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html601"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html604"
+  HREF="node36.html">CIMP</A>
+<B> Up:</B> <A NAME="tex2html600"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html594"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+ &nbsp; <B>  <A NAME="tex2html602"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

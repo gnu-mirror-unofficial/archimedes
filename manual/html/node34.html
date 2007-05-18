@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>GNU Archimedes Commands Syntax</TITLE>
+<META NAME="description" CONTENT="GNU Archimedes Commands Syntax">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node60.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="archimedes.html">
+<LINK REL="next" HREF="node35.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html566"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html562"
+  HREF="archimedes.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html556"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html564"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html567"
+  HREF="node35.html">ACCEPTORDENSITY</A>
+<B> Up:</B> <A NAME="tex2html563"
+  HREF="archimedes.html">GNU Archimedes, the Free</A>
+<B> Previous:</B> <A NAME="tex2html557"
+  HREF="node33.html">Electric Field Calculation</A>
+ &nbsp; <B>  <A NAME="tex2html565"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00800000000000000000">
+<B>GNU Archimedes</B> Commands Syntax</A>
+</H1>
+
+<P>
+In order to define a new general device, in <B>GNU Archimedes</B>, we need to describe it by means of keyword of a meta-language implemented in our code. This meta-language is very generic, so it can give the possibility of defining semiconductor devices of quite general structure. Furthermore, since the keyword are very simple to understand, it is possible to define devices in short time period and change them with small modifications, in case of optimisation process, for example, or similar.
+
+<BR>
+Thus, in this chapter, we describe the syntax of all the commands actually implemented in <B>GNU Archimedes</B>. The number of elements in this list will certainly increase during the development of new versions.
+
+<BR>
+The definition of a new device have to be written and saved in an ASCII file, which will be processed by <B>GNU Archimedes</B>. This is done typing the following row in a shell
+
+<P>
+<PRE>
+# archimedes filename.extension
+</PRE>
+where "filename.extension" is the name of the ASCII file in which the user have defined the device to be simulated. Some extra options are possible with <B>GNU Archimedes</B>. For this type in a shell window
+<PRE>
+# archimedes --help
+</PRE>
+
+<P>
+<B>VERY IMPORTANT REMARK</B> : <B>GNU Archimedes</B> is case sensitive so every command have to be written in capitols, otherwise it will not understand the command. Furthermore, all the unity of measure are taken from the international M.K.S.C. system.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html568"
+  HREF="node35.html">ACCEPTORDENSITY</A>
+<LI><A NAME="tex2html569"
+  HREF="node36.html">CIMP</A>
+<LI><A NAME="tex2html570"
+  HREF="node37.html">COMMENTS</A>
+<LI><A NAME="tex2html571"
+  HREF="node38.html">CONTACT</A>
+<LI><A NAME="tex2html572"
+  HREF="node39.html">DONORDENSITY</A>
+<LI><A NAME="tex2html573"
+  HREF="node40.html">LEID</A>
+<LI><A NAME="tex2html574"
+  HREF="node41.html">MATERIAL</A>
+<LI><A NAME="tex2html575"
+  HREF="node42.html">TRANSPORT</A>
+<LI><A NAME="tex2html576"
+  HREF="node43.html">MOSFET</A>
+<LI><A NAME="tex2html577"
+  HREF="node44.html">FINALTIME</A>
+<LI><A NAME="tex2html578"
+  HREF="node45.html">TAUW</A>
+<LI><A NAME="tex2html579"
+  HREF="node46.html">TIMESTEP</A>
+<LI><A NAME="tex2html580"
+  HREF="node47.html">XLENGTH</A>
+<LI><A NAME="tex2html581"
+  HREF="node48.html">YLENGTH</A>
+<LI><A NAME="tex2html582"
+  HREF="node49.html">XSPATIALSTEP</A>
+<LI><A NAME="tex2html583"
+  HREF="node50.html">YSPATIALSTEP</A>
+<LI><A NAME="tex2html584"
+  HREF="node51.html">QUANTUMEFFECTS</A>
+<LI><A NAME="tex2html585"
+  HREF="node52.html">NOQUANTUMEFFECTS</A>
+<LI><A NAME="tex2html586"
+  HREF="node53.html">MAXIMINI</A>
+<LI><A NAME="tex2html587"
+  HREF="node54.html">NOMAXIMINI</A>
+<LI><A NAME="tex2html588"
+  HREF="node55.html">SAVEEACHSTEP</A>
+<LI><A NAME="tex2html589"
+  HREF="node56.html">LATTICETEMPERATURE</A>
+<LI><A NAME="tex2html590"
+  HREF="node57.html">STATISTICALWEIGHT</A>
+<LI><A NAME="tex2html591"
+  HREF="node58.html">MEDIA</A>
+<LI><A NAME="tex2html592"
+  HREF="node59.html">OUTPUTFORMAT</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html566"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html562"
+  HREF="archimedes.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html556"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html564"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html567"
+  HREF="node35.html">ACCEPTORDENSITY</A>
+<B> Up:</B> <A NAME="tex2html563"
+  HREF="archimedes.html">GNU Archimedes, the Free</A>
+<B> Previous:</B> <A NAME="tex2html557"
+  HREF="node33.html">Electric Field Calculation</A>
+ &nbsp; <B>  <A NAME="tex2html565"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

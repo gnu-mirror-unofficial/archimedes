@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Quantum Effects</TITLE>
+<META NAME="description" CONTENT="The Quantum Effects">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html326"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html322"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html316"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html324"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html327"
+  HREF="node15.html">The Particle Dynamics</A>
+<B> Up:</B> <A NAME="tex2html323"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html317"
+  HREF="node13.html">The Semiclassical Approach</A>
+ &nbsp; <B>  <A NAME="tex2html325"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00620000000000000000">
+The Quantum Effects</A>
+</H1>
+
+<P>
+Concerning the quantum effects, while we consider the particles as semiclassical objects, we want to have the possibility of simulating relevant quantum effects in today manufactured semiconductor devices (like the diode tunnel, or the nanoscopic MOSFETs). This is a quite difficult goal, because we need an accurate solution of the Wigner equation to simulate these effects correctly. Unfortunately, the solution of the Wigner equation is a very difficult challenge, both from the point of view of numerical analysis and the point of view of computer resources, because it is an integro-differential equation, with a non-local term for the potential, which is very difficult to solve numerically, even in the one-dimensional case and the solution of such an equation is a function of the phase-space variables and time, which means that it is an enormously expensive solution from the point of view of computer memory. So, we have to use an other approach than the Wigner equation one.
+
+<P>
+For this purpose, recently, a new interpretation of quantum mechanics has been presented which is, at least at first order, equivalent to the Wigner quantum approach (and to the density gradient approach): this approach is known as @sampthe effective potential method. While in the Wigner, but even in the Schroedinger, quantum theory we consider the particles as wave-like objects (with very strange and unphysical properties, like negative probability, or non-locality...), in the effective potential we keep on considering particles as well-positioned particles in the phase-space, which is actually what we experience in the real world. So, instead  of giving a new "definition" of particles we redefine the electrostatic potential. In order to do it we compute the classical electrostatic potential by means of the classical and widely used Poisson equation
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\nabla \cdot [ \epsilon ({\bf {x}}) \nabla \phi_{cl} ({\bf {x}},t) ] =
+ - q [ N_D({\bf {x}}) - N_A({\bf {x}}) - n({\bf {x}},t) + p({\bf {x}},t)]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="494" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\displaystyle \nabla \cdot [ \epsilon ({\bf {x}}) \nabla \phi_{cl} ({\bf {x}},t) ] = - q [ N_D({\bf {x}}) - N_A({\bf {x}}) - n({\bf {x}},t) + p({\bf {x}},t)]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \nabla$">
+ is the gradient operator, <IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \epsilon$">
+ the material dielectric constant, <IMG
+ WIDTH="32" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ N_D$">
+ and <IMG
+ WIDTH="31" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ N_A$">
+ the donor and acceptor densities respectively, <IMG
+ WIDTH="14" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ q$">
+ the elementary charge, <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ n$">
+ and <IMG
+ WIDTH="14" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ p$">
+ the electron and hole densities respectively.
+Then we transform the precedently obtained classical potential in a quantum one in the following fashion
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\phi_{quant} = \frac{1}{\sqrt{2 \pi} a} \int_{\R^n}
+ \phi_{cl} ({\bf {x}}+{\bf {\xi}},t) exp(-\frac{\xi^2}{2 a^2}) d\xi
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="369" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$\displaystyle \phi_{quant} = \frac{1}{\sqrt{2 \pi} a} \int_{\R^n} \phi_{cl} ({\bf {x}}+{\bf {\xi}},t) exp(-\frac{\xi^2}{2 a^2}) d\xi$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ n$">
+ is the dimension of the spatial space (in <B>GNU Archimedes</B> <IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ n=2$">
+), <!-- MATH
+ $a=\frac{\hbar}{\sqrt{8 m^* k_B T_L}}$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ a=\frac{\hbar}{\sqrt{8 m^* k_B T_L}}$">
+, being <IMG
+ WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \hbar$">
+ the Planck constant divided by <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$ 2 \pi$">
+,<IMG
+ WIDTH="29" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$ m^*$">
+ the precedently discussed effective mass, <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$ k_B$">
+ the Boltzmann constant and <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_L$">
+ the lattice temperature.
+
+<P>
+For more information about this recent method, see the following papers:
+
+<OL>
+<LI>D.K.Ferry, R.Akis, D.Vasileska, "Quantum effects in MOSFETs: Use of an effective potential in 3D Monte Carlo simulation of ultra-short channel devices", IEDM Tech.Dig.,pp.287-290,2000
+
+<P>
+</LI>
+<LI>S.M.Ramey, R.Akis, D.Vasileska, and D.K.Ferry, "Modeling of quantum effects in ultrasmall SOI MOSFETs with effective potentials", in Abst.of Silicon Nanoelectronics Workshop, 2001, pp.50-51.
+
+<P>
+</LI>
+<LI>L.Shifren, R.Akis, and D.K.Ferry, "Correspondence between quantum and classical motion: Comparing Bohmian mechanics with a smoothed effective potential approach", Physics Letters A, vol.274, pp.75-83, Sep.2000.
+</LI>
+</OL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html326"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html322"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html316"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html324"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html327"
+  HREF="node15.html">The Particle Dynamics</A>
+<B> Up:</B> <A NAME="tex2html323"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html317"
+  HREF="node13.html">The Semiclassical Approach</A>
+ &nbsp; <B>  <A NAME="tex2html325"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

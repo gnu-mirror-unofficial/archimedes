@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Simplified MEP Model</TITLE>
+<META NAME="description" CONTENT="The Simplified MEP Model">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html456"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html452"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html448"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html454"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html457"
+  HREF="node26.html">Coupling Simplified MEP model</A>
+<B> Up:</B> <A NAME="tex2html453"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html449"
+  HREF="node24.html">The Choice of the</A>
+ &nbsp; <B>  <A NAME="tex2html455"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00670000000000000000">
+The Simplified MEP Model</A>
+</H1>
+From the vast literature, it is well known that Monte Carlo method is the best way for obtaining very accurate simulations for the transport of electrons in semiconductor devices. Even if this method is very accurate, it has the price of very high simulation time. This is why we introduce the MEP model in this release of <B>GNU Archimedes</B>. In this way, as we will see, we will have the possibility of coupling MEP and Monte Carlo in order to make Monte Carlo method faster.
+
+<P>
+As you can see from the precedent papers reported in the introduction of this chapter, the MEP model is a very advanced hydrodynamical model for both electrons and holes in Silicon devices. For our purpose we will need only a simplified version of it. This because, we only need simple initial conditions for the Monte Carlo method. In the following we report a sketch of this model. A paper is under construction and will be refered in the next versions of this manual. The MEP model is based on the closure of the semiclassical Boltzmann equation by means of the maximum entropy principle. Using the relaxation time approximation (for only the moments and not for the energy moment) and using the so-called Liotta-Mascali distribution function which has the following form
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+f = (\frac{3 \hbar^2}{4 \pi m^* W})^(\frac{3}{2}) n e^{-\frac{3 \epsilon}{2 W}} + \frac{27 \hbar^3}{32 \pi \sqrt{2 m^*}} \frac{n}{W} \epsilon^{-\frac{1}{2}} e^{-frac{3 \epsilon}{2 W}} u^i v_i
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="474" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.png"
+ ALT="$\displaystyle f = (\frac{3 \hbar^2}{4 \pi m^* W})^(\frac{3}{2}) n e^{-\frac{3 \...
+...{2 m^*}} \frac{n}{W} \epsilon^{-\frac{1}{2}} e^{-frac{3 \epsilon}{2 W}} u^i v_i$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+we get the following hydrodynamical model for electrons, which we will call the <B>Simplified MEP model</B>.
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+& & \frac{\partial n}{\partial t} + \frac{\partial n u^i}{\partial x^i} = C_n\\
+ & & \frac{n u^j}{\partial t} + \frac{n K_B T^{ij}}{\partial x^i} + q E^j \frac{n}{m^*} = - \frac{n u^i}{\tau_p}\\
+ & & \frac{\partial n W}{\partial t} + \frac{\partial n S^i}{\partial x^i}
+  + q E_i n u^i = - n \frac{W-W_0}{\tau_W}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="143" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.png"
+ ALT="$\displaystyle \frac{\partial n}{\partial t} + \frac{\partial n u^i}{\partial x^i} = C_n$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.27)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="281" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.png"
+ ALT="$\displaystyle \frac{n u^j}{\partial t} + \frac{n K_B T^{ij}}{\partial x^i} + q E^j \frac{n}{m^*} = - \frac{n u^i}{\tau_p}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.28)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT">&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="320" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.png"
+ ALT="$\displaystyle \frac{\partial n W}{\partial t} + \frac{\partial n S^i}{\partial x^i}
++ q E_i n u^i = - n \frac{W-W_0}{\tau_W}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+where <IMG
+ WIDTH="28" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.png"
+ ALT="$ \tau_W$">
+ is a function of the electrons energy, as you can see from the precedent papers. This function is computed numerically and reads:
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\tau_W (W) = -\frac{W-\frac{3}{2} K_B T_L}{-7.24 \times 10^{10} W^5 + 5.13 \times 10^{11}W^4 - 1.36 \times 10^{12} W^3 + 3.69 \times 10^{11} W^2 - 3.07 \times 10^{12} W + 9.97 \times 10^{10}}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="904" HEIGHT="68" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.png"
+ ALT="$\displaystyle \tau_W (W) = -\frac{W-\frac{3}{2} K_B T_L}{-7.24 \times 10^{10} W...
+...2} W^3 + 3.69 \times 10^{11} W^2 - 3.07 \times 10^{12} W + 9.97 \times 10^{10}}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Furthermore, we have the following relations:
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+K_B T^{ij} &=& \frac{2}{3} \frac{W}{m^*} \delta^{ij} \\
+ S^i &=& \frac{4}{3} W u^i
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="57" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.png"
+ ALT="$\displaystyle K_B T^{ij}$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="66" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img99.png"
+ ALT="$\displaystyle \frac{2}{3} \frac{W}{m^*} \delta^{ij}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.31)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="23" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$\displaystyle S^i$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="54" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$\displaystyle \frac{4}{3} W u^i$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+For the moment relaxation time we have the following relations which are taken from the Baccarani model:
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\tau_p = \frac{k_{\tau_p}}{T}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="73" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.png"
+ ALT="$\displaystyle \tau_p = \frac{k_{\tau_p}}{T}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+k_{\tau_p} = \frac{m^* \mu_0 T_L}{q}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="121" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.png"
+ ALT="$\displaystyle k_{\tau_p} = \frac{m^* \mu_0 T_L}{q}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <IMG
+ WIDTH="24" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.png"
+ ALT="$ \mu_0$">
+ the low field mobility and <IMG
+ WIDTH="26" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$ T_L$">
+ the lattice temperature.
+It is very easy to see how to adapt everything to Silicon heavy holes, so we do not report the Simplified MEP model for them.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html458"
+  HREF="node26.html">Coupling Simplified MEP model and Monte Carlo method</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html456"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html452"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html448"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html454"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html457"
+  HREF="node26.html">Coupling Simplified MEP model</A>
+<B> Up:</B> <A NAME="tex2html453"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html449"
+  HREF="node24.html">The Choice of the</A>
+ &nbsp; <B>  <A NAME="tex2html455"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

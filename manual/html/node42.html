@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>TRANSPORT</TITLE>
+<META NAME="description" CONTENT="TRANSPORT">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html687"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html683"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html677"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html685"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html688"
+  HREF="node43.html">MOSFET</A>
+<B> Up:</B> <A NAME="tex2html684"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html678"
+  HREF="node41.html">MATERIAL</A>
+ &nbsp; <B>  <A NAME="tex2html686"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00880000000000000000">
+TRANSPORT</A>
+</H1>
+
+<P>
+Pay attention to the fact that this command has a different syntax respect to the previous releases!!
+When the device is defined, the user has to choose what kind of transport <B>GNU Archimedes</B> have to simulate, i.e. if the transport is unipolar, bipolar and what kind of particles have to be simulated. This is done by the command <B>TRANSPORT</B>. The following list shows the choice the user can make. The only choices which is still not implemented is the Monte Carlo simulation of heavy holes. They are simulated by means of a simplified MEP model since they can be considered as almost fixed and do not contribute to the total device current.
+First of all, after typing the command <B>TRANSPORT</B> the user has to specify the model (i.e. Monte Carlo or MEP). This is done typing one of the following two choices
+
+<OL>
+<LI><B>MC</B>. This is invoked when we want to simulate a device by means of Monte Carlo method.
+</LI>
+<LI><B>MEP</B>. This is invoked when we want to simulate a device by means of the simplified MEP model.
+</LI>
+</OL>
+Once the method has been specified, the user has to choose what particles have to be simulated. This is done choosing between the followings:
+
+<OL>
+<LI><B>ELECTRONS</B>. This is invoked when the transport is unipolar and made of only electrons.
+</LI>
+<LI><B>HOLES</B>. This is invoked when the transport is unipolar and made of only holes.
+</LI>
+<LI><B>BIPOLAR</B>. This is invoked when the transport is bipolar and made of both electrons and holes.
+</LI>
+</OL>
+So, some examples of this command, in the present version of <B>GNU Archimedes</B>, are
+<PRE>
+# Monte Carlo simulation of only electrons
+ TRANSPORT MC ELECTRONS
+# Simplified MEP simulation of only electrons
+ TRANSPORT MEP ELECTRONS
+# Monte Carlo for electrons and MEP for heavy holes
+ TRANSPORT MC BIPOLAR
+# Simplified MEP model for both electrons and holes
+ TRANSPORT MEP BIPOLAR
+</PRE>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html687"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html683"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html677"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html685"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html688"
+  HREF="node43.html">MOSFET</A>
+<B> Up:</B> <A NAME="tex2html684"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html678"
+  HREF="node41.html">MATERIAL</A>
+ &nbsp; <B>  <A NAME="tex2html686"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

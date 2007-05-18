@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A First Example: The -
+- Diode</TITLE>
+<META NAME="description" CONTENT="A First Example: The -
+- Diode">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html276"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html272"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html268"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html274"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html277"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Up:</B> <A NAME="tex2html273"
+  HREF="node9.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html269"
+  HREF="node10.html">Overview</A>
+ &nbsp; <B>  <A NAME="tex2html275"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00520000000000000000">
+A First Example: The <IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n^+$">
+-<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ n$">
+-<IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n^+$">
+ Diode</A>
+</H1>
+
+<P>
+In this section I introduce a first example of semiconductor device simulated by <B>GNU Archimedes</B> in order to show how it is easy to define a new general device. Let us report, in the following, the definition of a device which is the benchmark in semiconductor simulation: the <IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n^+$">
+-<IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$ n$">
+-<IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$ n^+$">
+ Silicon diode.
+
+<P>
+<PRE>
+# Silicon DIODE test-1
+# created on 30 sep.2004, J.M.Sellier
+# modified on 06 oct.2004, J.M.Sellier
+# This file simulate a Silicon Diode.
+# To run it type:
+# archimedes diode.input
+
+MATERIAL SILICON
+TRANSPORT MC ELECTRONS
+
+FINALTIME 5.5e-12
+TIMESTEP 0.0015e-12
+
+XLENGTH 1.0e-6
+YLENGTH 0.1e-6
+
+XSPATIALSTEP 100
+YSPATIALSTEP 25
+
+# Definition of the doping concentration
+# ======================================
+DONORDENSITY    0.       0.    1.0e-6    0.1e-6    2.e21
+DONORDENSITY    0.       0.    0.3e-6    0.1e-6    5.e23
+DONORDENSITY    0.7e-6   0.    1.0e-6    0.1e-6    5.e23
+ACCEPTORDENSITY 0.       0.    1.0e-6    0.1e-6    1.e20
+
+# Definition of the various contacts
+# ==================================
+CONTACT LEFT  0.0    0.1e-6 OHMIC     0.0    5.e23
+CONTACT RIGHT 0.0    0.1e-6 OHMIC     1.0    5.e23
+CONTACT UP    0.0    1.0e-6 INSULATOR 0.0
+CONTACT DOWN  0.0    1.0e-6 INSULATOR 0.0
+
+NOQUANTUMEFFECTS
+MAXIMINI
+# SAVEEACHSTEP
+
+LATTICETEMPERATURE 300.
+
+STATISTICALWEIGHT 1500
+
+MEDIA 500
+
+OUTPUTFORMAT GNUPLOT
+
+# end of MESFET test-1
+</PRE>
+
+<P>
+The name of this file is "diode.input" and you can find it in the distribution directory :
+<PRE>
+archimedes-0.0.4/tests/DIODE
+</PRE>
+If you run it by typing in the shell command line
+<PRE>
+# archimedes diode.input
+</PRE>
+You will get, after the computation and plotting the results, the pictures (which are cuts on y=0.05 micron) you can find in figures (<A HREF="#diode1">4.1</A>)-(<A HREF="#diode5">4.5</A>).
+
+<DIV ALIGN="CENTER"><A NAME="diode1"></A><A NAME="1016"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Density Profile obtained by <B>GNU Archimedes</B></FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="454" HEIGHT="454" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=diode_pictures/dens.eps, width=10cm,height=10cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="diode2"></A><A NAME="1018"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Electron Velocity obtained by <B>GNU Archimedes</B></FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="454" HEIGHT="454" BORDER="0"
+ SRC="img4.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=diode_pictures/vel.eps, width=10cm,height=10cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="diode3"></A><A NAME="1020"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Electronic Energy obtained by <B>GNU Archimedes</B></FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="454" HEIGHT="454" BORDER="0"
+ SRC="img5.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=diode_pictures/energy.eps, width=10cm,height=10cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="diode4"></A><A NAME="1022"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Potential Profile obtained by <B>GNU Archimedes</B></FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="454" HEIGHT="454" BORDER="0"
+ SRC="img6.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=diode_pictures/potential.eps, width=10cm,height=10cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="diode5"></A><A NAME="1024"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Electric Field obtained by <B>GNU Archimedes</B></FONT></CAPTION>
+<TR><TD><IMG
+ WIDTH="454" HEIGHT="454" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{figure}
+\centerline{\psfig{figure=diode_pictures/efield.eps, width=10cm,height=10cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+As we will see soon, it is very easy to define a new semiconductor device. First of all, we see that the rows starting by the symbol "#" are just comments. Let us analyze, now, some keywords present in this example. For more informations about all the syntax commands of <B>GNU Archimedes</B> you must read the chapter related on this topic.
+
+<P>
+
+<OL>
+<LI>The keyword <B>MATERIAL</B>.
+This keyword is easy to understand. Invoking it, you choose the material of which your device is made. At the present time, <B>GNU Archimedes</B> accept only the Silicon and GaAs materials, but in the next future you will can choose other materials. So, for the moment, the only correct uses you can do of <B>MATERIAL</B> are the following :
+<PRE>
+ MATERIAL SILICON
+</PRE>
+or
+<PRE>
+ MATERIAL GAAS
+</PRE>
+
+<P>
+</LI>
+<LI>The keyword <B>TRANSPORT</B>. Also this one is easy to understand. By this command, you choose what kind of charge transport you want, including the mathematical model for the transport (Monte Carlo or simplified model). In this case you can choose between only electrons, only holes, or bipolar transport (up to the release 0.0.4 it is possible to simulate all this particles). Pay attention to the fact that the syntax for this command has been changed in the release 0.0.4.
+
+<P>
+</LI>
+<LI>The keyword <B>FINALTIME</B>. Nothing is easier to understand :) By this command, you choose the final time at which you want to stop the simulation and save the results.
+
+<P>
+</LI>
+<LI>The Keyword <B>TIMESTEP</B>. When you start a simulation and you have to reach the choosed final time, you have to proceed by time step. The time step you choose have to respect an appropriate condition, i.e. it must be not too big, in order to avoid unphysical effects during the simulation. We will describe this conditions better in a next paragraph.
+
+<P>
+</LI>
+<LI>The Keywords <B>XLENGTH</B> and <B>YLENGTH</B>. Also these keywords are easy to understand. If one think of our simulated device as a simple rectangle, then we have to specify the length of the edges in the x-direction and the y-direction. This is done by these two keywords. Even if not all semiconductor devices are rectangular, in this first release of <B>GNU Archimedes</B> we can simulate only rectangular domains. This will be improved in some next version.
+
+<P>
+</LI>
+<LI>The keywords <B>XSPATIALSTEP</B> and <B>YSPATIALSTEP</B>. These commands are invoked when one want to define the number of cells in the x-direction and the y-direction of a rectangular domain.
+
+<P>
+</LI>
+<LI>The keyword <B>DONORDENSITY</B>. This keyword is needed when one wants to define a rectangular sub-domain in which one defines a certain donor density. This command is more complex than the precedent one (but, don't worry, quite easy to understand). See the paragraph related to this command to known more about it.
+
+<P>
+</LI>
+<LI>The keyword <B>ACCEPTORDENSITY</B>. This is the same as the precedent keyword (i.e. <B>DONORDENSITY</B>), but for the holes. Pay attention to the fact that even if you are not simulating the transport of holes, you need to fix a value of the holes concentration on the devices. This is needed by the Poisson equation which take into account the accpetor density, in order to solve accurately the electric field. See the paragraph related to this topic for more informations.
+
+<P>
+</LI>
+<LI>The keyword <B>CONTACT</B>. By this command, you choose where are positioned the various contacts. Furthermore, you can specify what kind of contact it is, chossing among ohmic, insulator and Schottky contact. When desired you can specify the applied voltage on the contact.
+
+<P>
+</LI>
+<LI>The keyword <B>NOQUANTUMEFFECTS</B>. This command is invoked when you know, a priori, that the quantum effects are negligible, and so you don't want <B>GNU Archimedes</B> compute them (for example when the electronic wave lenght is negligible with respect to the caracteristic length of the device). This is important when you want to get a smaller run-time with respect to the run-time of a full-effects simulation.
+
+<P>
+</LI>
+<LI>The keyword <B>MAXIMINI</B>. This is a simple command for the visualisation of the maximum and minimum of some macroscopic values in real-time, i.e. during the simulation. Avoid to invoke this command if you want to obtain a shorter run-time.
+
+<P>
+</LI>
+<LI>The keyword <B>SAVEEACHSTEP</B>. This is needed when you want to save all the solutions at each time step. This is a very usefull command in the case you want to follow the transient behaviour of a device in real-time or when you want to create a movie showing the transient dynamics of a simulated device.
+
+<P>
+</LI>
+<LI>The keyword <B>LATTICETEMPERATURE</B>. It is easy to understand that you have to fix a temperature of the lattice of the device simulated. This is done by this simple command.
+
+<P>
+</LI>
+<LI>The keyword <B>STATISTICALWEIGHT</B>. By this command you choose the statistical weight of the particles. Pay attention to the fact that the statistical weight is a piecewise-function of the position, so the statistical weight coincides to the number of super-particles per cell only in the most doped sub-domain of the device.
+
+<P>
+</LI>
+<LI>The keyword <B>MEDIA</B>. As <B>GNU Archimedes</B> is a Monte Carlo simulator, it is impossible to avoid the noise in the solutions. The noise is intrinsic to the method. So, in order to get less noisy solutions, it is necessary to take an average mean in time of the values simulated. Fixing a value to MEDIA means that you will take the mean average of the solution over the last MEDIA time steps.
+
+<P>
+</LI>
+<LI>The keyword <B>OUTPUTFORMAT</B>. By this command, you choose the format of the output, i.e. the output files generated by <B>GNU Archimedes</B> during or the end of a simulation.
+
+<P>
+</LI>
+</OL>
+
+<P>
+These are only some keywords (or commands) you can use in <B>GNU Archimedes</B> to describe the geometry and the physical characteristics of a simulated device. As you can see, they are simple to understand and very general. So it is easy to define a device with quite general characteristics.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html276"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html272"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html268"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html274"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html277"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Up:</B> <A NAME="tex2html273"
+  HREF="node9.html">Introduction</A>
+<B> Previous:</B> <A NAME="tex2html269"
+  HREF="node10.html">Overview</A>
+ &nbsp; <B>  <A NAME="tex2html275"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

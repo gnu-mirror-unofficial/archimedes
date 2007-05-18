@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Non-Stationary Poisson Equation</TITLE>
+<META NAME="description" CONTENT="The Non-Stationary Poisson Equation">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html533"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html529"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html523"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html534"
+  HREF="node32.html">Numerical Resolution of the</A>
+<B> Up:</B> <A NAME="tex2html530"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html524"
+  HREF="node30.html">The Stationary Poisson Equation</A>
+ &nbsp; <B>  <A NAME="tex2html532"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00740000000000000000">
+The Non-Stationary Poisson Equation</A>
+</H1>
+
+<P>
+We introduce in this section what I call the "non-stationary" Poisson equation, hereafter NSP equation. This equation is very easy to implment, in a very general numerical context, and very easy to and solve with simple, but very robust, numerical schemes. Let us report in the following the NSP equation
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+\frac{1}{k_S} \frac{\partial \phi}{\partial t} + \nabla \cdot [ \epsilon ({\bf {x}}) \nabla \phi ({\bf {x}},t) ] =
+ - q [ N_D({\bf {x}}) - N_A({\bf {x}}) - n({\bf {x}},t) + p({\bf {x}},t)]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="555" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img129.png"
+ ALT="$\displaystyle \frac{1}{k_S} \frac{\partial \phi}{\partial t} + \nabla \cdot [ \...
+...t) ] = - q [ N_D({\bf {x}}) - N_A({\bf {x}}) - n({\bf {x}},t) + p({\bf {x}},t)]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="24" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$ k_S$">
+ is a constant for giving the right dimensions of the term <!-- MATH
+ $\frac{\partial \phi}{\partial t}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$ \frac{\partial \phi}{\partial t}$">
+, and the other variables have the usual meaning.
+It is very easy to show that the solution of this equation will converge, in time, to the solution of the classical Poisson equation described in the precedent paragraph, whatever are the initial potential conditions and with the same boundary conditions. So, if we have a numerical solver for this equation, it will be very easy to get the solution of the classical Poisson equation, simply getting the solution of the NSP equation for very big final time.
+
+<BR>
+Actually it is trivial to develop and implement a numerical solver for NSP. In fact, in the context of finite difference, such a numerical scheme can be obtained applying finite-difference approximations of derivatives to the NSP equation. This is what we will see in the next paragraph.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html535"
+  HREF="node32.html">Numerical Resolution of the NSP Equation</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html533"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html529"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html523"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html531"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html534"
+  HREF="node32.html">Numerical Resolution of the</A>
+<B> Up:</B> <A NAME="tex2html530"
+  HREF="node27.html">Coupling between Monte Carlo</A>
+<B> Previous:</B> <A NAME="tex2html524"
+  HREF="node30.html">The Stationary Poisson Equation</A>
+ &nbsp; <B>  <A NAME="tex2html532"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

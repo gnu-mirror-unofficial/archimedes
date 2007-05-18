@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Scientifical and Industrial Motivations</TITLE>
+<META NAME="description" CONTENT="The Scientifical and Industrial Motivations">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html206"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html202"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html196"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html204"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html207"
+  HREF="node6.html">The Ethical Motivations</A>
+<B> Up:</B> <A NAME="tex2html203"
+  HREF="node4.html">Why GNU Archimedes? A</A>
+<B> Previous:</B> <A NAME="tex2html197"
+  HREF="node4.html">Why GNU Archimedes? A</A>
+ &nbsp; <B>  <A NAME="tex2html205"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00410000000000000000">
+The Scientifical and Industrial Motivations</A>
+</H1>
+
+<P>
+In today semiconductor technology, the miniaturization of devices is more and more progressing. In this context, it is easy to see that numerical simulations play an important role at every level of device manufacture. In fact, the cost of designing and physically constructing prototypes for VLSI semiconductor devices is very high and without the availability of advanced simulators the efforts for devices miniaturization would, likely, be brought to a halt. From assessing the performance of individual transistors, to circuits and systems, and, consequently, with the promise of improved device performance, industries are encouraged to keep on miniaturizing with lower manufacture costs.
+
+<P>
+But, unfortunately, such simulations are not whithout their challenges... A first consequence of device miniaturization is that simulations of submicron semicondutor devices requires advanced transport models. Because of the presence of very high and rapidly varying electric field, phenomena occur which cannot be described by means of the well-known drift-diffusion models, which do not incorporate energy as a dynamical variable. That is why some generalization has been sought in order to obtain more physically accurate models, like energy-transport and hydrodynamical models. The energy-transport models which are implemented in commercial simulators are based on phenomenological constitutive equations for the particle flux and energy flux depending on a set of parameters which are fitted to homogeneous bulk material Monte Carlo simulations. So, this is not, certainly, a satisfactory physical description of the internal electronic dynamics in a semiconductor device.
+
+<P>
+As current device technologies quickly approach the scales whereby quantum effects due to strong confinement of carriers and direct source-drain tunneling will begin to dominate, new simulation techniques are required in order to fully understand and acurately simulate the physics behind the technology operation. 
+
+<P>
+Of all the simulation methods currently employed, ensemble Monte Carlo has always been, both in the accademic and industrial community, the most vigorous and trusted method for device simulation, as it is proven to be reliable and predictive, as one can easily see from the vast bibliography on this subject. However, as Monte Carlo relies on the particle nature of the electron (in fact we consider an electron like a 'biliard ball'), quantum effects associated with the wave-like nature of electrons cannot fully incorporated into the actual simulators, i.e. the ensemble Monte Carlo have to be lightly (or strongly, it depends on the point of view and on the methods implemented...) modified to take into account the quantum effects, at least at a first order of approximation, which is certainly enough to take into account correctly all the relevant quantum effects present in the present-day semiconductor devices (till 2015 probably...). In order to take into account the wave-like nature of electrons we use a recently introduced quantum theory, the so-called Bohm effective potential theory.
+
+<P>
+So it is challenging and very interesting to develop such a code for 2D quantum submicron semiconductor devices. This is why I have decided to implement this code, but these are not the only motivations... 
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html206"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html202"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html196"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html204"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html207"
+  HREF="node6.html">The Ethical Motivations</A>
+<B> Up:</B> <A NAME="tex2html203"
+  HREF="node4.html">Why GNU Archimedes? A</A>
+<B> Previous:</B> <A NAME="tex2html197"
+  HREF="node4.html">Why GNU Archimedes? A</A>
+ &nbsp; <B>  <A NAME="tex2html205"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

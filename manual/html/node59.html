@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>OUTPUTFORMAT</TITLE>
+<META NAME="description" CONTENT="OUTPUTFORMAT">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node60.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html889"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html885"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html881"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html887"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html890"
+  HREF="node60.html">Example: The MESFET device.</A>
+<B> Up:</B> <A NAME="tex2html886"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html882"
+  HREF="node58.html">MEDIA</A>
+ &nbsp; <B>  <A NAME="tex2html888"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION008250000000000000000">
+OUTPUTFORMAT</A>
+</H1>
+
+<P>
+When <B>GNU Archimedes</B> saves the various solution outputs, it have to know in which format to do it. This is specified by the user in the following way, in the input file
+<PRE>
+ OUTPUTFORMAT formattype
+</PRE>
+where <I>formattype</I> can be one of the following two choices
+
+<OL>
+<LI><B>GNUPLOT</B>. This sets that the output files will finish by the extension <I>xyz</I> which means that the file will be in the following format
+<BR><P><!-- MATH
+ \begin{displaymath}
+x_i \quad y_j \quad v(x_i,y_j)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="140" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$\displaystyle x_i \quad y_j \quad v(x_i,y_j) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{i+1} \quad y_j \quad v(x_{i+1},y_j)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="174" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$\displaystyle x_{i+1} \quad y_j \quad v(x_{i+1},y_j) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{i+2} \quad y_j \quad v(x_{i+2},y_j)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="174" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$\displaystyle x_{i+2} \quad y_j \quad v(x_{i+2},y_j) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{i+3} \quad y_j \quad v(x_{i+3},y_j)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="174" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$\displaystyle x_{i+3} \quad y_j \quad v(x_{i+3},y_j) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+...
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="20" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$\displaystyle ... $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{N_x} \quad y_j \quad v(x_{N_x},y_j)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="167" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$\displaystyle x_{N_x} \quad y_j \quad v(x_{N_x},y_j) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+...
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="20" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$\displaystyle ... $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_i \quad y_{j+1} \quad v(x_i,y_{j+1})
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="174" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$\displaystyle x_i \quad y_{j+1} \quad v(x_i,y_{j+1}) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{i+1} \quad y_{j+1} \quad v(x_{i+1},y_{j+1})
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="209" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$\displaystyle x_{i+1} \quad y_{j+1} \quad v(x_{i+1},y_{j+1}) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{i+2} \quad y_{j+1} \quad v(x_{i+2},y_{j+1})
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="209" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.png"
+ ALT="$\displaystyle x_{i+2} \quad y_{j+1} \quad v(x_{i+2},y_{j+1}) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{i+3} \quad y_{j+1} \quad v(x_{i+3},y_{j+1})
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="209" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img168.png"
+ ALT="$\displaystyle x_{i+3} \quad y_{j+1} \quad v(x_{i+3},y_{j+1}) $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+...
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="20" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$\displaystyle ... $">
+</DIV><P>
+</P>
+<P><!-- MATH
+ \begin{displaymath}
+x_{N_x} \quad y_{N_y} \quad v(x_{N_x},y_{N_y})
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="190" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.png"
+ ALT="$\displaystyle x_{N_x} \quad y_{N_y} \quad v(x_{N_x},y_{N_y}) $">
+</DIV><P>
+</P>
+</LI>
+<LI><B>MESH</B>. The <I>MESH</I> format is a little bit more complex than the <I>GNUPLOT</I> one. In this case, we have a file which describes the mesh and another which describes the solution on that mesh.
+<BR>
+Concerning the mesh file, it have a file structure like the following
+<PRE>
+ MeshVersionFormatted 1
+ Dimension 2
+ Vertices
+ number of vertices
+ x1 y1 0
+ x2 y1 0
+ x3 y1 0
+ ...
+ xn y1 0
+ ...
+ xn yn 0
+ Quadrilaterals
+ number of quadrilaterals
+ v1_1 v2_1 v3_1 v4_1 0
+ v1_2 v2_2 v3_2 v4_2 0
+ ...
+ v1_N v2_N v3_N v4_N 0
+</PRE>
+
+<P>
+Concerning the file for the solution on the mesh, the file have the following structure
+<PRE>
+ 2 1 number of vertices 2
+ solution on the 1-st vertex
+ solution on the 2-nd vertex
+ solution on the 3-th vertex
+ solution on the 4-th vertex
+ ...
+ solution on the last vertex
+</PRE>
+This kind of format is becoming very popular in the scientifical computation community, that is why the author have reputed important to implement it in <B>GNU Archimedes</B>.
+</LI>
+</OL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html889"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html885"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html881"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html887"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html890"
+  HREF="node60.html">Example: The MESFET device.</A>
+<B> Up:</B> <A NAME="tex2html886"
+  HREF="node34.html">GNU Archimedes Commands Syntax</A>
+<B> Previous:</B> <A NAME="tex2html882"
+  HREF="node58.html">MEDIA</A>
+ &nbsp; <B>  <A NAME="tex2html888"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>

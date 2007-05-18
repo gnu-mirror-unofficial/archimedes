@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Initial Conditions</TITLE>
+<META NAME="description" CONTENT="Initial Conditions">
+<META NAME="keywords" CONTENT="archimedes">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="archimedes.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html374"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html370"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html364"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html372"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html375"
+  HREF="node19.html">Contacts and Boundaries</A>
+<B> Up:</B> <A NAME="tex2html371"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html365"
+  HREF="node17.html">The Drift Process</A>
+ &nbsp; <B>  <A NAME="tex2html373"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00640000000000000000">
+Initial Conditions</A>
+</H1>
+
+<P>
+In this paragraph, we explain how <B>GNU Archimedes</B> specifies the initial conditions for the super-particles. Concerning the spatial distribution, this is trivially done according to the donor (resp. acceptor) profile density specified by the user in the input file for the electrons (resp. holes). Concerning the distribution in the pseudo-wave vector space, things are a little bit more complex. We have to specify an initial particle distribution in the k-space. This is done in the following way.
+We consider all the particles, at the initial time of the simulation, nearly the thermal equilibrium, which means that the energy of a particle reads
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{equation}
+{\cal{E}}(k) = -\frac{3}{2} k_B T_L ln (r)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="177" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.png"
+ ALT="$\displaystyle {\cal{E}}(k) = -\frac{3}{2} k_B T_L ln (r)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img54.png"
+ ALT="$ r$">
+ is a random number between 0 and 1.
+
+<P>
+Once we have specified the energy of the electrons, then we can choose the pseudo-wave vectors of all particles. This is done, trivially, by the following algorithm.
+
+<OL>
+<LI>We can, from the Kane dispersion relation, compute the modulus of the pseudo-wave vector. This is done by the following expression
+<P><!-- MATH
+ \begin{displaymath}
+k = \frac{\sqrt{2 m^* {\cal{E}}(k) [1 + \alpha {\cal{E}}(k)]}}{\hbar}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="225" HEIGHT="71" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\displaystyle k = \frac{\sqrt{2 m^* {\cal{E}}(k) [1 + \alpha {\cal{E}}(k)]}}{\hbar} $">
+</DIV><P>
+</P>
+
+<P>
+</LI>
+<LI>We, then, generate two random numbers between 0 and 1, say <IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img56.png"
+ ALT="$ \theta$">
+ and <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$ \phi$">
+ 
+
+<P>
+</LI>
+<LI>We compute the three component of the pseudo-wave vector by
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray}
+k_x &=& k \sin{\theta} \cos{\phi} \\
+ k_y &=& k \sin{\theta} \sin{\phi} \\
+ k_z &=& k \sin{\theta}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="23" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$\displaystyle k_x$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="96" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$\displaystyle k \sin{\theta} \cos{\phi}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.14)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\displaystyle k_y$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="94" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$\displaystyle k \sin{\theta} \sin{\phi}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.15)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$\displaystyle k_z$"></TD>
+<TD WIDTH="10" ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.png"
+ ALT="$\displaystyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$\displaystyle k \sin{\theta}$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(5.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL">
+
+<P>
+</LI>
+</OL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html374"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/lib/latex2html/icons/next.png"></A> 
+<A NAME="tex2html370"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/lib/latex2html/icons/up.png"></A> 
+<A NAME="tex2html364"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/lib/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html372"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="file:/usr/lib/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html375"
+  HREF="node19.html">Contacts and Boundaries</A>
+<B> Up:</B> <A NAME="tex2html371"
+  HREF="node12.html">Physical Models employed in</A>
+<B> Previous:</B> <A NAME="tex2html365"
+  HREF="node17.html">The Drift Process</A>
+ &nbsp; <B>  <A NAME="tex2html373"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Didier Link
+2007-05-18
+</ADDRESS>
+</BODY>
+</HTML>
