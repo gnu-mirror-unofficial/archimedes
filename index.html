@@ -74,26 +74,13 @@ of a device even before this last is built.</p>
 makes, in this sense, Archimedes a powerful tool for the simulation of quite
 general semiconductor devices.</p>
 
-<p>Archimedes (current version 1.0.0) is able to simulate a plenty of physics
+<p>Archimedes is able to simulate a plenty of physics
 effects and transport for electrons and heavy holes in Silicon, Germanium,
 GaAs, InSb, AlSb, AlAs , AlxInxSb, AlxIn(1-x)Sb, AlP, AlSb, GaP, GaSb, InP
 and their compounds (III-V semiconductor materials), along with Silicon
 Oxide, the applied and/or self-consistent electrostatic and magnetic fields
 by means of Poisson and Faraday equation. It is, also, able to deal with
 heterostructures.</p>
-
-<h4>The Scientifical and Industrial Motivations</h4>
-
-<p>In today semiconductor technology, the miniaturization of devices is more and more progressing. In this context, it is easy to see that numerical simulations play an important role at every level of device manufacture. In fact, the cost of designing and physically constructing prototypes for VLSI semiconductor devices is very high and without the availability of advanced simulators the efforts for devices miniaturization would, likely, be brought to a halt. From assessing the performance of individual transistors, to circuits and systems, and, consequently, with the promise of improved device performance, industries are encouraged to keep on miniaturizing with lower manufacture costs.
-</p>
-<p>But, unfortunately, such simulations are not whithout their challenges... A first consequence of device miniaturization is that simulations of submicron semicondutor devices requires advanced transport models. Because of the presence of very high and rapidly varying electric field, phenomena occur which cannot be described by means of the well-known drift-diffusion models, which do not incorporate energy as a dynamical variable. That is why some generalization has been sought in order to obtain more physically accurate models, like energy-transport and hydrodynamical models. The energy-transport models which are implemented in commercial simulators are based on phenomenological constitutive equations for the particle flux and energy flux depending on a set of parameters which are fitted to homogeneous bulk material Monte Carlo simulations. So, this is not, certainly, a satisfactory physical description of the internal electronic dynamics in a semiconductor device.
-</p>
-<p>As current device technologies quickly approach the scales whereby quantum effects due to strong confinement of carriers and direct source-drain tunneling will begin to dominate, new simulation techniques are required in order to fully understand and acurately simulate the physics behind the technology operation. 
-</p>
-<p>Of all the simulation methods currently employed, ensemble Monte Carlo has always been, both in the accademic and industrial community, the most vigorous and trusted method for device simulation, as it is proven to be reliable and predictive, as one can easily see from the vast bibliography on this subject. However, as Monte Carlo relies on the particle nature of the electron (in fact we consider an electron like a 'biliard ball'), quantum effects associated with the wave-like nature of electrons cannot fully incorporated into the actual simulators, i.e. the ensemble Monte Carlo have to be lightly (or strongly, it depends on the point of view and on the methods implemented...) modified to take into account the quantum effects, at least at a first order of approximation, which is certainly enough to take into account correctly all the relevant quantum effects present in the present-day semiconductor devices (till 2015 probably...). In order to take into account the wave-like nature of electrons we use a recently introduced quantum theory, the so-called Bohm effective potential theory.
-</p>
-<p>So it is challenging and very interesting to develop such a code for 2D quantum submicron semiconductor devices. This is why I have decided to implement this code, but these are not the only motivations... 
-</p>
 
 <h4>The Ethical Motivations, a New Paradigma in Science</h4>
 
@@ -120,10 +107,11 @@ duplication of efforts all around the world?</p>
 <p>That is why Archimedes has been created...</p>
 
 <h4>Do you want to support <b>GNU/Archimedes</b> ?</h4>
-<p><b>GNU/Archimedes</b> has been developed in my free time and it took a huge amount of time for the development of a trustable and predictive code, a code which can certainly be an alternative to the proprietary simulation programs used in industry and/or research (certainly a better alternative if you to use a code on which construct your own code/method). So if you use it and you like it and you are an industry researcher, a university researcher, or a researcher in an other organisation, (or if you just want to encourage my effort in doing something important for the scientifical/industrial community) please think about the possibility of buying my DISTRIBUTION, in order to support and encourage my effort of making new versions of <b>GNU/Archimedes</b>. It is very important for the community and for the future of the technology and science to support Free Software, so, in the case you want the distribution or you just want to make a donation write to me at 
-<a href="mailto:jeanmichel.sellier@gmail.com">my email address</a>.</p>
-<p>You will receive the distribution which means that you will receive the last version of the printed manual along with the last version of <b>GNU/Archimedes</b> code (SOURCES and binaries). Furthermore, if you give your email address, you will be informed by the author (me) in case of new downloadable releases :) 
-</p>
+<p>Please remember that the development of GNU archimedes is a volunteer
+effort, and you can also contribute to its development. For
+information about contributing to the GNU archimedes Project and/or
+request of enhancements and new features, please contact me at
+jeanmichel [dot] sellier [at] gmail [dot] com.</p>
 
 <!-- <h4><a href="#TOCpromotion" id="promotion">Project promotion</a></h4>
 
@@ -309,7 +297,7 @@ notice, and the copyright notice, are preserved.
 <p>
 Updated:
 <!-- timestamp start -->
-$Date: 2011/09/01 11:40:32 $
+$Date: 2011/09/06 09:59:24 $
 <!-- timestamp end -->
 </p>
 </div>
