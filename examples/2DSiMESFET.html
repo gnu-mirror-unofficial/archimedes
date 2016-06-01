@@ -3,21 +3,14 @@
 <!--#include virtual="/server/banner.html" -->
 <table cellpadding="0" cellspacing="0" border="0" width="100%">
 <tr>
-<td align="center" valign="middle"><a href="../graphics/energy.png"><img src="../graphics/energy-small.jpg" width="200" height="154" alt="MESFET electron energy" /></a></td>
-<td align="center" valign="middle"><h2>2D Silicon MESFET</h2><img src="../graphics/gnu-head-sm.jpg" width="129" height="122" alt="A GNU head" /></td>
-<td align="center" valign="middle"><a href="../graphics/potential.png"><img src="../graphics/potential-small.jpg" width="200" height="193" alt="MESFET eletric potential" /></a></td>
+<td align="center" valign="middle" style="border: 0px;"><a href="../graphics/energy.png"><img src="../graphics/energy-small.jpg" width="200" height="154" alt="MESFET electron energy" /></a></td>
+<td align="center" valign="middle" style="border: 0px;"><h2>2D Silicon MESFET</h2><img src="../graphics/gnu-head-sm.jpg" width="129" height="122" alt="A GNU head" /></td>
+<td align="center" valign="middle" style="border: 0px;"><a href="../graphics/potential.png"><img src="../graphics/potential-small.jpg" width="200" height="193" alt="MESFET eletric potential" /></a></td>
 </tr>
 </table>  
-  
-<!-- </p> -->
 
 <hr/>
-
-<!-- Put your content here -->
-<!-- Following is an example -->
-
-<p>
-<td height="246" valign="top" bgcolor="#F0F0F0">&nbsp;<p>A 2D Silicon 
+        <p>A 2D Silicon 
         MESFET has been simulated by means of Archimedes, in order to show its 
         capabilities of simulating submicron MESFETs. This devices in made of 
         Silicon. Archimedes takes into account all the relevant scattering 
@@ -28,160 +21,140 @@
         end of this page, we report the ASCII input file for the simulation of 
         this particular device.</p>
         <p>Here, we report the electron density in the MESFET.</p>
-        <p align="center"><a href="../graphics/images/2DSiMESFET/density_MESFET.jpeg">
-        <img border="0" src="../graphics/images/2DSiMESFET/density_MESFET.jpeg" width="476" height="361"></a></p>
-        <p align="left">The energy of electrons, after 5 picoseconds, looks as 
+        <p class="center"><a href="../graphics/images/2DSiMESFET/density_MESFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMESFET/density_MESFET.jpeg" width="476" height="361" /></a></p>
+        <p class="nocenter">The energy of electrons, after 5 picoseconds, looks as 
         in the following picture.</p>
-        <p align="center"><a href="../graphics/images/2DSiMESFET/energy_MESFET.jpeg">
-        <img border="0" src="../graphics/images/2DSiMESFET/energy_MESFET.jpeg" width="473" height="355"></a></p>
-        <p align="left">The electrostatic potential is reported below.</p>
-        <p align="center"><a href="../graphics/images/2DSiMESFET/potential_MESFET.jpeg">
-        <img border="0" src="../graphics/images/2DSiMESFET/potential_MESFET.jpeg" width="470" height="353"></a></p>
-        <p align="left">And, finally, we report the graphics for x- and y- 
+        <p class="center"><a href="../graphics/images/2DSiMESFET/energy_MESFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMESFET/energy_MESFET.jpeg" width="473" height="355" /></a></p>
+        <p class="nocenter">The electrostatic potential is reported below.</p>
+        <p class="center"><a href="../graphics/images/2DSiMESFET/potential_MESFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMESFET/potential_MESFET.jpeg" width="470" height="353" /></a></p>
+        <p class="nocenter">And, finally, we report the graphics for x- and y- 
         electric field component respectively.</p>
-        <p align="center"><a href="../graphics/images/2DSiMESFET/x_Efield_MESFET.jpeg">
-        <img border="0" src="../graphics/images/2DSiMESFET/x_Efield_MESFET.jpeg" width="470" height="354"></a></p>
-        <p align="center"><a href="../graphics/images/2DSiMESFET/y_Efield_MESFET.jpeg">
-        <img border="0" src="../graphics/images/2DSiMESFET/y_Efield_MESFET.jpeg" width="467" height="350"></a></p>
-        <p align="left">We report in the following the ASCII input file for the 
+        <p class="center"><a href="../graphics/images/2DSiMESFET/x_Efield_MESFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMESFET/x_Efield_MESFET.jpeg" width="470" height="354" /></a></p>
+        <p class="center"><a href="../graphics/images/2DSiMESFET/y_Efield_MESFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMESFET/y_Efield_MESFET.jpeg" width="467" height="350" /></a></p>
+
+        <p class="nocenter">We report in the following the ASCII input file for the 
         simulation of such a device by means of Archimedes.</p>
-        <p align="left"><font color="#008000"># Silicon MESFET test-1</font></p>
-        <p align="left"><font color="#008000"># www.southnovel.eu<br>
-        <br>
-        </font><font color="#008080">MATERIAL SILICON<br>
-        TRANSPORT MC ELECTRONS<br>
-        </font><br>
-        <font color="#008080">FINALTIME</font> <font color="#FF0000">4.0e-12</font><br>
-        <font color="#008080">TIMESTEP</font> <font color="#FF0000">0.0015e-12</font><br>
-        <br>
-        <font color="#008080">XLENGTH</font> <font color="#FF0000">0.6e-6</font><br>
-        <font color="#008080">YLENGTH</font> <font color="#FF0000">0.2e-6</font><br>
-        <br>
-        <font color="#008080">XSPATIALSTEP</font> <font color="#FF0000">80</font><br>
-        <font color="#008080">YSPATIALSTEP</font> <font color="#FF0000">40</font><br>
-        <br>
-        <font color="#008000"># Definition of the doping concentration<br>
-        # ======================================<br>
-        </font><font color="#008080">DONORDENSITY</font> <font color="#FF0000">
-        0. 0. 0.6e-6 0.2e-6 1.e23<br>
-        </font><font color="#008080">DONORDENSITY</font> <font color="#FF0000">
-        0. 0.15e-6 0.1e-6 0.2e-6 3.e23<br>
-        </font><font color="#008080">DONORDENSITY</font> <font color="#FF0000">
-        0.5e-6 0.15e-6 0.6e-6 0.2e-6 3.e23<br>
-        </font><font color="#008080">ACCEPTORDENSITY</font>
-        <font color="#FF0000">0. 0. 0.6e-6 0.2e-6 1.e20</font><br>
-        <br>
-        <font color="#008000"># Definition of the various contacts<br>
-        # ==================================<br>
-        </font><font color="#008080">CONTACT DOWN</font> <font color="#FF0000">
-        0.0 0.6e-6</font> <font color="#008080">INSULATOR</font>
-        <font color="#FF0000">0.0</font><br>
-        <font color="#008080">CONTACT LEFT</font> <font color="#FF0000">0.0 
-        0.2e-6</font> <font color="#008080">INSULATOR</font>
-        <font color="#FF0000">0.0</font><br>
-        <font color="#008080">CONTACT RIGHT</font> <font color="#FF0000">0.0 
-        0.2e-6</font> <font color="#008080">INSULATOR</font>
-        <font color="#FF0000">0.0</font><br>
-        <font color="#008080">CONTACT UP</font> <font color="#FF0000">0.1e-6 
-        0.2e-6</font> <font color="#008080">INSULATOR</font>
-        <font color="#FF0000">0.0</font><br>
-        <font color="#008080">CONTACT UP</font> <font color="#FF0000">0.4e-6 
-        0.5e-6</font> <font color="#008080">INSULATOR</font>
-        <font color="#FF0000">0.0</font><br>
-        <font color="#008080">CONTACT UP</font> <font color="#FF0000">0.0 0.1e-6</font>
-        <font color="#008080">OHMIC</font> <font color="#FF0000">0.0 3.e23</font><br>
-        <font color="#008080">CONTACT UP</font> <font color="#FF0000">0.2e-6 
-        0.4e-6</font> <font color="#008080">SCHOTTKY</font>
-        <font color="#FF0000">-1.3</font><br>
-        <font color="#008080">CONTACT UP</font> <font color="#FF0000">0.5e-6 
-        0.6e-6</font> <font color="#008080">OHMIC</font> <font color="#FF0000">
-        1.0 3.e23</font><br>
-        <br>
-        <font color="#008080">NOQUANTUMEFFECTS</font><br>
-        <font color="#008080">MAXIMINI</font><br>
-        <font color="#008000"># SAVEEACHSTEP<br>
-        </font><br>
-        <font color="#008080">LATTICETEMPERATURE</font> <font color="#FF0000">
-        300.</font><br>
-        <br>
-        <font color="#008080">STATISTICALWEIGHT</font> <font color="#FF0000">250</font><br>
-        <font color="#008080">MEDIA</font> <font color="#FF0000">500</font><br>
-        <br>
-        <font color="#008080">OUTPUTFORMAT GNUPLOT<br>
-        </font><br>
-        <font color="#008000"># end of MESFET test-1<br>
-&nbsp;</font></td>
-</p>
+
+        <p class="nocenter"><span style="color: #008000"># Silicon MESFET test-1</span></p>
+        <p class="nocenter"><span style="color: #008000"># www.southnovel.eu<br />
+        <br />
+        </span><span style="color: #008080">MATERIAL SILICON<br />
+        TRANSPORT MC ELECTRONS<br />
+        </span><br />
+        <span style="color: #008080">FINALTIME</span> <span style="color: #FF0000">4.0e-12</span><br />
+        <span style="color: #008080">TIMESTEP</span> <span style="color: #FF0000">0.0015e-12</span><br />
+        <br />
+        <span style="color: #008080">XLENGTH</span> <span style="color: #FF0000">0.6e-6</span><br />
+        <span style="color: #008080">YLENGTH</span> <span style="color: #FF0000">0.2e-6</span><br />
+        <br />
+        <span style="color: #008080">XSPATIALSTEP</span> <span style="color: #FF0000">80</span><br />
+        <span style="color: #008080">YSPATIALSTEP</span> <span style="color: #FF0000">40</span><br />
+        <br />
+        <span style="color: #008000"># Definition of the doping concentration<br />
+        # ======================================<br />
+        </span><span style="color: #008080">DONORDENSITY</span> <span style="color: #FF0000">
+        0. 0. 0.6e-6 0.2e-6 1.e23<br />
+        </span><span style="color: #008080">DONORDENSITY</span> <span style="color: #FF0000">
+        0. 0.15e-6 0.1e-6 0.2e-6 3.e23<br />
+        </span><span style="color: #008080">DONORDENSITY</span> <span style="color: #FF0000">
+        0.5e-6 0.15e-6 0.6e-6 0.2e-6 3.e23<br />
+        </span><span style="color: #008080">ACCEPTORDENSITY</span>
+        <span style="color: #FF0000">0. 0. 0.6e-6 0.2e-6 1.e20</span><br />
+        <br />
+        <span style="color: #008000"># Definition of the various contacts<br />
+        # ==================================<br />
+        </span><span style="color: #008080">CONTACT DOWN</span> <span style="color: #FF0000">
+        0.0 0.6e-6</span> <span style="color: #008080">INSULATOR</span>
+        <span style="color: #FF0000">0.0</span><br />
+        <span style="color: #008080">CONTACT LEFT</span> <span style="color: #FF0000">0.0 
+        0.2e-6</span> <span style="color: #008080">INSULATOR</span>
+        <span style="color: #FF0000">0.0</span><br />
+        <span style="color: #008080">CONTACT RIGHT</span> <span style="color: #FF0000">0.0 
+        0.2e-6</span> <span style="color: #008080">INSULATOR</span>
+        <span style="color: #FF0000">0.0</span><br />
+        <span style="color: #008080">CONTACT UP</span> <span style="color: #FF0000">0.1e-6 
+        0.2e-6</span> <span style="color: #008080">INSULATOR</span>
+        <span style="color: #FF0000">0.0</span><br />
+        <span style="color: #008080">CONTACT UP</span> <span style="color: #FF0000">0.4e-6 
+        0.5e-6</span> <span style="color: #008080">INSULATOR</span>
+        <span style="color: #FF0000">0.0</span><br />
+        <span style="color: #008080">CONTACT UP</span> <span style="color: #FF0000">0.0 0.1e-6</span>
+        <span style="color: #008080">OHMIC</span> <span style="color: #FF0000">0.0 3.e23</span><br />
+        <span style="color: #008080">CONTACT UP</span> <span style="color: #FF0000">0.2e-6 
+        0.4e-6</span> <span style="color: #008080">SCHOTTKY</span>
+        <span style="color: #FF0000">-1.3</span><br />
+        <span style="color: #008080">CONTACT UP</span> <span style="color: #FF0000">0.5e-6 
+        0.6e-6</span> <span style="color: #008080">OHMIC</span> <span style="color: #FF0000">
+        1.0 3.e23</span><br />
+        <br />
+        <span style="color: #008080">NOQUANTUMEFFECTS</span><br />
+        <span style="color: #008080">MAXIMINI</span><br />
+        <span style="color: #008000"># SAVEEACHSTEP<br />
+        </span><br />
+        <span style="color: #008080">LATTICETEMPERATURE</span> <span style="color: #FF0000">
+        300.</span><br />
+        <br />
+        <span style="color: #008080">STATISTICALWEIGHT</span> <span style="color: #FF0000">250</span><br />
+        <span style="color: #008080">MEDIA</span> <span style="color: #FF0000">500</span><br />
+        <br />
+        <span style="color: #008080">OUTPUTFORMAT GNUPLOT<br />
+        </span><br />
+        <span style="color: #008000"># end of MESFET test-1</span></p>
 
 
-<!-- If needed, change the copyright block at the bottom. In general, -->
-<!-- all pages on the GNU web server should have the section about    -->
-<!-- verbatim copying.  Please do NOT remove this without talking     -->
-<!-- with the webmasters first. --> 
-<!-- Please make sure the copyright date is consistent with the document -->
-<!-- and that it is like this "2001, 2002" not this "2001-2002." -->
 </div><!-- for id="content", starts in the include above -->
 <!--#include virtual="/server/footer.html" -->
 <div id="footer">
+<div class="unprintable">
 
-<p>
-Please send FSF &amp; GNU inquiries to 
-<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
-There are also <a href="/contact/">other ways to contact</a> 
-the FSF.
-<br />
-Please send broken links and other corrections or suggestions to
-<!-- If you are a project maintainer or developer, please use -->
-<!-- your own email, as webmasters does not manage most -->
-<!-- project webpages (those that we do, you know who you are). -->
-<a href="mailto:didier@famille-link.fr"><em>Didier LINK</em></a>.
+<p>Please send general FSF &amp; GNU inquiries to
+<a href="mailto:gnu@gnu.org">&lt;gnu@gnu.org&gt;</a>.
+There are also <a href="/contact/">other ways to contact</a>
+the FSF.  Broken links and other corrections or suggestions can be sent
+to <a href="mailto:didier@famille-link.fr">&lt;didier@famille-link.fr&gt;</a>.
 </p>
 
-<p>
-Please see the 
-<a href="/server/standards/README.translations.html">Translations
-README</a> for information on coordinating and submitting
-translations of this article.
-</p>
-
-<p>
-Copyright &copy; 2007-2008 Free Software Foundation, Inc.,
-</p>
-<address>51 Franklin St, Fifth Floor, Boston, MA 02110, USA</address>
-<p>Verbatim copying and distribution of this entire article are
-permitted worldwide, without royalty, in any medium, provided this
-notice, and the copyright notice, are preserved.
-</p>
-
-<p>
-Updated:
-<!-- timestamp start -->
-$Date: 2008/12/13 13:17:34 $
-<!-- timestamp end -->
-</p>
+<p>Please see the <a
+href="/server/standards/README.translations.html">Translations
+README</a> for information on coordinating and submitting translations
+of this article.</p>
 </div>
 
-<div id="translations">
-<h4>Translations of this page</h4>
+<!-- Regarding copyright, in general, standalone pages (as opposed to
+     files generated as part of manuals) on the GNU web server should
+     be under CC BY-ND 4.0.  Please do NOT change or remove this
+     without talking with the webmasters or licensing team first.
+     Please make sure the copyright date is consistent with the
+     document.  For web pages, it is ok to list just the latest year the
+     document was modified, or published.
+     
+     If you wish to list earlier years, that is ok too.
+     Either "2001, 2002, 2003" or "2001-2003" are ok for specifying
+     years, as long as each year in the range is in fact a copyrightable
+     year, i.e., a year in which the document was published (including
+     being publicly visible on the web or in a revision control system).
+     
+     There is more detail about copyright years in the GNU Maintainers
+     Information document, www.gnu.org/prep/maintain. -->
 
-<!-- Please keep this list alphabetical. -->
-<!-- Comment what the language is for each type, i.e. de is German. -->
-<!-- Write the language name in its own language (Deutsch) in the text. -->
-<!-- If you add a new language here, please -->
-<!-- advise web-translators@gnu.org and add it to -->
-<!--  - /home/www/bin/nightly-vars either TAGSLANG or WEBLANG -->
-<!--  - /home/www/html/server/standards/README.translations.html -->
-<!--  - one of the lists under the section "Translations Underway" -->
-<!--  - if there is a translation team, you also have to add an alias -->
-<!--  to mail.gnu.org:/com/mailer/aliases -->
-<!-- Please also check you have the 2 letter language code right, cf. -->
-<!-- <URL:http://www.w3.org/WAI/ER/IG/ert/iso639.htm> -->
-<!-- Please use W3C normative character entities. -->
+<p>Copyright &copy; 2007, 2008 Free Software Foundation, Inc.</p>
 
-<ul class="translations-list">
-<!-- English -->
-<li><a href="/software/archimedes/index.html">English</a>&nbsp;[en]</li>
-</ul>
+<p>This page is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by-nd/4.0/">Creative
+Commons Attribution-NoDerivatives 4.0 International License</a>.</p>
+
+<!--#include virtual="/server/bottom-notes.html" -->
+
+<p class="unprintable">Updated:
+<!-- timestamp start -->
+$Date: 2016/06/01 17:17:45 $
+<!-- timestamp end -->
+</p>
 </div>
 </div>
 </body>
