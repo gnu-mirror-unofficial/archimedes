@@ -1,13 +1,53 @@
-<!--#include virtual="/server/header.html" -->
+<!--#include virtual="/server/html5-header.html" -->
+<!-- Parent-Version: 1.95 -->
 <title>GNU Archimedes</title>
+<style type="text/css"><!--
+.table { display: table; width: 100%; border: 0; margin: 1em 0 1.5em; }
+.table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em 1em 0;
+  border: 0;
+}
+.table-cell h2 { margin: 0; }
+.image1, .image2 { width: 25%; }
+.image1 img,  .image2 img { width: 12.5em; max-width: 100%; }
+.gnu-head { width: 8em; max-width: 40%; padding-top: .5em; }
+#content p img {
+  display: block;
+  width: 35em; max-width: 100%;
+  margin: auto;
+}
+.input {
+  max-width: max-content;
+  padding: .5em 1.5em;
+  background: #f3f3f3;
+  margin: 1.5em auto;
+}
+@media (max-width: 50em) {
+  .image1 { display: none; }
+  .image2 { width: 45%; }
+}
+@media (max-width: 35em) {
+  .image2 { display: none; }
+}
+--></style>
 <!--#include virtual="/server/banner.html" -->
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" valign="middle" style="border: 0px;"><a href="../graphics/energy.png"><img src="../graphics/energy-small.jpg" width="200" height="154" alt="MESFET electron energy" /></a></td>
-<td align="center" valign="middle" style="border: 0px;"><h2>2D Silicon MOSFET</h2><img src="../graphics/gnu-head-sm.jpg" width="129" height="122" alt="A GNU head" /></td>
-<td align="center" valign="middle" style="border: 0px;"><a href="../graphics/potential.png"><img src="../graphics/potential-small.jpg" width="200" height="193" alt="MESFET eletric potential" /></a></td>
-</tr>
-</table>  
+<div class="table">
+  <div class="table-cell image1"><a href="../graphics/energy.png"><img
+    src="../graphics/energy-small.jpg" width="200"
+    alt="MESFET electron energy" /></a>
+  </div>
+  <div class="table-cell"><h2>2D Silicon MOSFET</h2><img class="gnu-head"
+    src="../graphics/gnu-head-sm.jpg" width="129"
+    alt="A GNU head" />
+  </div>
+  <div class="table-cell image2"><a href="../graphics/potential.png"><img
+    src="../graphics/potential-small.jpg" width="200"
+    alt="MESFET eletric potential" /></a>
+  </div>
+</div>
 
 <hr/>
         <p>A 2D Silicon 
@@ -21,27 +61,28 @@
         end of this page, we report the ASCII input file for the simulation of 
         this particular device.</p>
         <p>Here, we report the electron density in the MOSFET.</p>
-        <p class="center"><a href="../graphics/images/2DSiMOSFET/density_MOSFET.jpeg">
-        <img alt="" src="../graphics/images/2DSiMOSFET/density_MOSFET.jpeg" width="502" height="377" /></a></p>
-        <p class="nocenter">The energy of electrons, after 5 picoseconds, looks as 
+        <p><a href="../graphics/images/2DSiMOSFET/density_MOSFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMOSFET/density_MOSFET.jpeg" width="502" /></a></p>
+        <p>The energy of electrons, after 5 picoseconds, looks as 
         in the following picture.</p>
-        <p class="center"><a href="../graphics/images/2DSiMOSFET/energy_MOSFET.jpeg">
-        <img alt="" src="../graphics/images/2DSiMOSFET/energy_MOSFET.jpeg" width="498" height="376" /></a></p>
-        <p class="nocenter">The electrostatic potential is reported below.</p>
-        <p class="center"><a href="../graphics/images/2DSiMOSFET/potential_MOSFET.jpeg">
-        <img alt="" src="../graphics/images/2DSiMOSFET/potential_MOSFET.jpeg" width="498" height="375" /></a></p>
-        <p class="nocenter">And, finally, we report the graphics for x- and y- 
+        <p><a href="../graphics/images/2DSiMOSFET/energy_MOSFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMOSFET/energy_MOSFET.jpeg" width="498" /></a></p>
+        <p>The electrostatic potential is reported below.</p>
+        <p><a href="../graphics/images/2DSiMOSFET/potential_MOSFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMOSFET/potential_MOSFET.jpeg" width="498" /></a></p>
+        <p>And, finally, we report the graphics for x- and y- 
         electron velocity component respectively.</p>
-        <p class="center"><a href="../graphics/images/2DSiMOSFET/x_velocity_MOSFET.jpeg">
-        <img alt="" src="../graphics/images/2DSiMOSFET/x_velocity_MOSFET.jpeg" width="500" height="373" /></a></p>
-        <p class="center"><a href="../graphics/images/2DSiMOSFET/y_velocity_MOSFET.jpeg">
-        <img alt="" src="../graphics/images/2DSiMOSFET/y_velocity_MOSFET.jpeg" width="499" height="375" /></a></p>
+        <p><a href="../graphics/images/2DSiMOSFET/x_velocity_MOSFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMOSFET/x_velocity_MOSFET.jpeg" width="500" /></a></p>
+        <p><a href="../graphics/images/2DSiMOSFET/y_velocity_MOSFET.jpeg">
+        <img alt="" src="../graphics/images/2DSiMOSFET/y_velocity_MOSFET.jpeg" width="499" /></a></p>
 
-        <p class="nocenter">We report in the following the ASCII input file for the 
+        <p>We report in the following the ASCII input file for the 
         simulation of such a device by means of Archimedes.</p>
 
-        <p class="nocenter"><span style="color: #008000"># Silicon MOSFET test-1</span></p>
-        <p class="nocenter"><span style="color: #008000"># www.southnovel.eu<br />
+<div class="input">
+        <p><span style="color: #008000"># Silicon MOSFET test-1</span></p>
+        <p><span style="color: #008000"># www.southnovel.eu<br />
         <br />
         </span><span style="color: #008080">MATERIAL SILICON<br />
         TRANSPORT MC ELECTRONS<br />
@@ -88,9 +129,9 @@
         <span style="color: #008080">CONTACT UP</span> <span style="color: #FF0000">0.5e-6 
         0.6e-6</span> <span style="color: #008080">OHMIC</span> <span style="color: #FF0000">
         1.0 3.e23</span></p>
-        <p class="nocenter"><span style="color: #008080">OXYDE UP</span><span style="color: #FF0000"> 
+        <p><span style="color: #008080">OXYDE UP</span><span style="color: #FF0000"> 
         0.2e-6 0.4e-6 0.06e-6 0.8</span></p>
-        <p class="nocenter">
+        <p>
         <span style="color: #008080">NOQUANTUMEFFECTS</span><br />
         <span style="color: #008080">MAXIMINI</span><br />
         <br />
@@ -104,7 +145,7 @@
         </span><br />
         <span style="color: #008000"># end of MOSFET test-1</span>
         </p>
-
+</div>
 
 </div><!-- for id="content", starts in the include above -->
 <!--#include virtual="/server/footer.html" -->
@@ -120,7 +161,7 @@ to <a href="mailto:didier@famille-link.fr">&lt;didier@famille-link.fr&gt;</a>.
 
 <p>Please see the <a
 href="/server/standards/README.translations.html">Translations
-README</a> for information on coordinating and submitting translations
+README</a> for information on coordinating and contributing translations
 of this article.</p>
 </div>
 
@@ -151,7 +192,7 @@ Commons Attribution-NoDerivatives 4.0 International License</a>.</p>
 
 <p class="unprintable">Updated:
 <!-- timestamp start -->
-$Date: 2016/06/01 17:17:45 $
+$Date: 2021/01/03 17:36:01 $
 <!-- timestamp end -->
 </p>
 </div>

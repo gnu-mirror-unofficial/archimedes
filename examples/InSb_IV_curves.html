@@ -1,13 +1,54 @@
 <!--#include virtual="/server/html5-header.html" -->
+<!-- Parent-Version: 1.95 -->
 <title>GNU Archimedes</title>
+<style type="text/css"><!--
+.table { display: table; width: 100%; border: 0; margin: 1em 0 1.5em; }
+.table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em 1em 0;
+  border: 0;
+}
+.table-cell h2 { margin: 0; }
+.image1, .image2 { width: 25%; }
+.image1 img,  .image2 img { width: 12.5em; max-width: 100%; }
+.gnu-head { width: 8em; max-width: 40%; padding-top: .5em; }
+#content p img {
+  display: block;
+  width: 35em; max-width: 100%;
+  margin: auto;
+}
+#content p img.small-img { width: 22.8em; }
+.input {
+  max-width: max-content;
+  padding: .5em 1.5em;
+  background: #f3f3f3;
+  margin: 1.5em auto;
+}
+@media (max-width: 50em) {
+  .image1 { display: none; }
+  .image2 { width: 45%; }
+}
+@media (max-width: 35em) {
+  .image2 { display: none; }
+}
+--></style>
 <!--#include virtual="/server/banner.html" -->
-<table cellpadding="0" cellspacing="0" border="0" width="100%">
-<tr>
-<td align="center" valign="middle" style="border: 0px;"><a href="../graphics/energy.png"><img src="../graphics/energy-small.jpg" width="200" height="154" alt="MESFET electron energy" /></a></td>
-<td align="center" valign="middle" style="border: 0px;"><h2>InSb FET IV curves</h2><img src="../graphics/gnu-head-sm.jpg" width="129" height="122" alt="A GNU head" /></td>
-<td align="center" valign="middle" style="border: 0px;"><a href="../graphics/potential.png"><img src="../graphics/potential-small.jpg" width="200" height="193" alt="MESFET eletric potential" /></a></td>
-</tr>
-</table>  
+<div class="table">
+  <div class="table-cell image1"><a href="../graphics/energy.png"><img
+    src="../graphics/energy-small.jpg" width="200"
+    alt="MESFET electron energy" /></a>
+  </div>
+  <div class="table-cell"><h2>InSb FET IV curves</h2><img class="gnu-head"
+    src="../graphics/gnu-head-sm.jpg" width="129"
+    alt="A GNU head" />
+  </div>
+  <div class="table-cell image2"><a href="../graphics/potential.png"><img
+    src="../graphics/potential-small.jpg" width="200"
+    alt="MESFET eletric potential" /></a>
+  </div>
+</div>
 
 <hr/>
         <p>In the 
@@ -15,9 +56,9 @@
         These curves show the electric features of an quantum well InSb FET (Field 
         Effects Transistor). The structure of such a device is schematically 
         reported in the following picture.</p>
-        <p class="center">
-        <img alt="" src="../graphics/images/IVInSb/pnp.png" /></p>
-        <p class="nocenter">Starting from the top of the device, we have a 20 
+        <p>
+        <img class="small-img" alt="" src="../graphics/images/IVInSb/pnp.png" /></p>
+        <p>Starting from the top of the device, we have a 20 
         nanometers Al<sub><span style="font-family: verdana">0.2</span></sub>In<sub>
         <span style="font-family: verdana">0.8</span></sub>Sb 
         layer with the Source (Ohmic contact), the Gate (Schottky contact) and 
@@ -27,26 +68,26 @@
         <span style="font-family: verdana">0.8</span></sub>Sb 
         again along with a Schottky contact with an applied potential equal to 
         -0.5 Volt (also known as the bulk potential).</p>
-        <p class="nocenter"><b><i>Archimedes is well suited for such 
+        <p><b><i>Archimedes is well suited for such 
         heterostructures since it is able to quantum mechanically calculate the 
         transmission and reflection coefficient for the particles at such 
         heterojunctions.</i></b></p>
-        <p class="nocenter">Varying the applied potential on the various contacts of 
+        <p>Varying the applied potential on the various contacts of 
         this device, it is possible to calculate its IV curves. This has been 
         done by means of Archimedes, our 2D semiconductor device simulator.</p>
-        <p class="nocenter">In the following we report three IV curves obtained by 
+        <p>In the following we report three IV curves obtained by 
         Archimedes, with the following applied potentials :</p>
-        <p class="nocenter">Vsource = 0.0, Vbulk = -0.5, Vgate = -0.2, 0.0, +0.2, 
+        <p>Vsource = 0.0, Vbulk = -0.5, Vgate = -0.2, 0.0, +0.2, 
         Vdrain = from 0.0 to 0.5</p>
-        <p class="center"><a target="_blank" href="../graphics/images/IVInSb/IV1.jpeg">
-        <img alt="" src="../graphics/images/IVInSb/IV1.jpeg" width="503" height="345" /></a></p>
-        <p class="nocenter">Finally, we report the following IV curve obtained by 
+        <p><a target="_blank" href="../graphics/images/IVInSb/IV1.jpeg">
+        <img alt="" src="../graphics/images/IVInSb/IV1.jpeg" width="503" /></a></p>
+        <p>Finally, we report the following IV curve obtained by 
         Archimedes, with the following applied potentials:</p>
-        <p class="nocenter">Vsource = 0.0, Vbulk = -0.5, Vgate = from -0.5 to +0.5, 
+        <p>Vsource = 0.0, Vbulk = -0.5, Vgate = from -0.5 to +0.5, 
         Vdrain = 0.5</p>
-        <p class="center"><a target="_blank" href="../graphics/images/IVInSb/IV2.jpeg">
-        <img alt="" src="../graphics/images/IVInSb/IV2.jpeg" width="497" height="342" /></a></p>
-        <p class="nocenter"></p>
+        <p><a target="_blank" href="../graphics/images/IVInSb/IV2.jpeg">
+        <img alt="" src="../graphics/images/IVInSb/IV2.jpeg" width="497" /></a></p>
+        <p></p>
 
 </div><!-- for id="content", starts in the include above -->
 <!--#include virtual="/server/footer.html" -->
@@ -62,7 +103,7 @@ to <a href="mailto:didier@famille-link.fr">&lt;didier@famille-link.fr&gt;</a>.
 
 <p>Please see the <a
 href="/server/standards/README.translations.html">Translations
-README</a> for information on coordinating and submitting translations
+README</a> for information on coordinating and contributing translations
 of this article.</p>
 </div>
 
@@ -93,7 +134,7 @@ Commons Attribution-NoDerivatives 4.0 International License</a>.</p>
 
 <p class="unprintable">Updated:
 <!-- timestamp start -->
-$Date: 2016/06/01 17:17:45 $
+$Date: 2021/01/03 17:36:01 $
 <!-- timestamp end -->
 </p>
 </div>
