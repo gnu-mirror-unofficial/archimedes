@@ -1,40 +1,76 @@
-<!--#include virtual="/server/header.html" -->
-<!-- Parent-Version: 1.79 -->
+<!--#include virtual="/server/html5-header.html" -->
+<!-- Parent-Version: 1.95 -->
 <title>GNU Archimedes</title>
+<style type="text/css"><!--
+.table { display: table; width: 100%; border: 0; margin: 1em 0 1.5em; }
+.table-row { display: table-row; }
+.table-cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em 1em 0;
+  border: 0;
+}
+.table-cell h2 { margin: 0; }
+.table-cell h3 { margin: 0 0 .5em; }
+.image1, .image2 { width: 25%; }
+.image1 img,  .image2 img { width: 12.5em; max-width: 100%; }
+.gnu-head { width: 8em; max-width: 40%; padding-top: .5em; }
+.archimedes-toc { max-width: max-content; margin: auto; }
+.archimedes-toc li { margin: .5em 2em; }
+.archimedes-toc li a, h3 a { text-decoration: none; }
+.archimedes-toc li a[href]:visited, h3 a[href]:visited { color: #049; }
+@media (max-width: 50em) {
+  .image1 { display: none; }
+  .image2 { width: 45%; }
+  .table p { text-align: left; }
+}
+@media (max-width: 35em) {
+  .image2 { display: none; }
+}
+--></style>
 <!--#include virtual="/server/gnun/initial-translations-list.html" -->
 <!--#include virtual="/server/banner.html" -->
-<table cellpadding="0" cellspacing="0" border="0" width="100%" style="border: 0px;">
-<tr>
-<td align="center" valign="middle" style="border: 0px;"><a href="graphics/energy.png"><img src="graphics/energy-small.jpg" width="200" height="154" alt="MESFET electron energy" /></a></td>
-<td align="center" valign="middle" style="border: 0px;"><h2>Archimedes</h2><img src="graphics/gnu-head-sm.jpg" width="129" height="122" alt="A GNU head" /></td>
-<td align="center" valign="middle" style="border: 0px;"><a href="graphics/potential.png"><img src="graphics/potential-small.jpg" width="200" height="193" alt="MESFET eletric potential" /></a></td>
-</tr>
-<tr>
-	<td align="center" valign="middle" style="border: 0px;"><a href="graphics/RTD_conduction_band.jpg"><img src="graphics/RTD_conduction_band_small.jpg" alt="Nano-Archimedes screenshot sample 1" /></a><br />
-Conduction Band of a Resonant Tunneling Diode
-</td>
-<td align="center" valign="middle" style="width: 300px; border: 0px;"><h3><span style="color: red">NEW! </span></h3><h4>Printed copies of the manual of Archimedes are available <a href="http://www.amazon.com/GNU-Archimedes-Manual-Simulation-Semiconductor/dp/1532718764/ref=sr_1_1?ie=UTF8&amp;qid=1460960788&amp;sr=8-1&amp;keywords=GNU+archimedes+sellier">here</a>. By buying this book, not only you become an expert of this package, you also support the development of new features.</h4></td>
-<td align="center" valign="middle" style="border: 0px;"><a href="graphics/RTD.jpg"><img src="graphics/RTD_small.jpg" alt="Nano-Archimedes screenshot sample 2" /></a><br />
-Schematic Representation of a Resonant Tunneling Diode
-</td>
-</tr>
-
-</table>  
+<div class="table">
+ <div class="table-row">
+  <div class="table-cell image1"><a href="graphics/energy.png"><img
+    src="graphics/energy-small.jpg" width="200"
+    alt="MESFET electron energy" /></a>
+  </div>
+  <div class="table-cell"><h2>Archimedes</h2><img class="gnu-head"
+    src="graphics/gnu-head-sm.jpg" width="129"
+    alt="A GNU head" />
+  </div>
+  <div class="table-cell image2"><a href="graphics/potential.png"><img
+    src="graphics/potential-small.jpg" width="200"
+    alt="MESFET eletric potential" /></a>
+  </div>
+ </div>
+ <div class="table-row">
+  <div class="table-cell image1"><a href="graphics/RTD_conduction_band.jpg"><img
+    src="graphics/RTD_conduction_band_small.jpg"
+    alt="Nano-Archimedes screenshot sample 1" /></a><br />
+    <small>Conduction Band of a Resonant Tunneling Diode</small>
+  </div>
+  <div class="table-cell"><h3 style="color: red">NEW!</h3>
+    <strong>Printed copies of the manual of Archimedes are available <a
+    href="http://www.amazon.com/GNU-Archimedes-Manual-Simulation-Semiconductor/dp/1532718764/ref=sr_1_1?ie=UTF8&amp;qid=1460960788&amp;sr=8-1&amp;keywords=GNU+archimedes+sellier">
+    here</a>. By buying this book, not only you become an expert of this
+    package, you also support the development of new features.</strong>
+  </div>
+  <div class="table-cell image2"><a href="graphics/RTD.jpg"><img
+    src="graphics/RTD_small.jpg"
+    alt="Nano-Archimedes screenshot sample 2" /></a><br />
+    <small>Schematic Representation of a Resonant Tunneling Diode</small>
+  </div>
+ </div>
+</div>
   
-<!-- </p> -->
-
 <hr/>
 
-<!-- Put your content here -->
-<!-- Following is an example -->
+<h3 class="no-display">Table of Contents</h3>
 
-<table cellpadding="0" cellspacing="0" border="0" width="100%" style="border: 0px;">
-<tr>
-<td style="width: 300px; border: 0px;"><h3>
-  Table of Contents
-</h3>
-
-<ul>
+<ul class="archimedes-toc columns">
   <li><a href="#introduction" id="TOCintroduction">Introduction to Archimedes</a></li>
 <!--   <li><a href="#promotion" id="TOCpromotion">Project promotion</a></li>
  -->  <li><a href="#downloading" id="TOCdownloading">Downloading Archimedes</a></li>
@@ -45,11 +81,7 @@ Schematic Representation of a Resonant Tunneling Diode
  -->  <li><a href="#bug" id="TOCbug">Report a Bug</a></li>
   <li><a href="#maintainer" id="TOCmaintainer">Maintainer</a></li>
   <li><a href="#links" id="TOClinks">Links</a></li>
-</ul></td>
-<td style="width: 200px; border: 0px;"></td>
-<td style="border: 0px;">
-</td>
-</tr></table>
+</ul>
 
 <hr/>
 
@@ -158,14 +190,21 @@ From the event web site : "Free Software Trophies" goals are to give credit and 
   It can also be found on one of <a href="http://www.gnu.org/prep/ftp.html">our FTP mirrors</a>.
 </p>
 
-<table cellpadding="0" cellspacing="0" border="0" width="100%" style="border: 0px;">
-<tr>
-<td align="center" valign="middle" style="border: 0px;"><a href="http://www.nanohub.org/tools/archimedes"><img src="graphics/screen1.JPG" alt="Archimedes screenshot sample 1" /></a></td>
-<td align="center" valign="middle" style="width: 300px; border: 0px;">A GUI for Archimedes is on nanoHUB! You can run it on the fly! Just go to <a href="http://www.nanohub.org/tools/archimedes">www.nanohub.org/tools/archimedes</a> (you will have to register to run it, but it is totally FREE)</td>
-<td align="center" valign="middle" style="border: 0px;"><a href="http://www.nanohub.org/tools/archimedes"><img src="graphics/screen2.JPG" alt="Archimedes screenshot sample 2" /></a></td>
-</tr>
-
-</table>  
+<div class="table">
+  <div class="table-cell image1"><a href="http://www.nanohub.org/tools/archimedes"><img
+    src="graphics/screen1.JPG"
+    alt="Archimedes screenshot sample 1" /></a>
+  </div>
+  <div class="table-cell"><p>A GUI for Archimedes is on nanoHUB! You can run it
+    on the fly! Just go to <a href="http://www.nanohub.org/tools/archimedes">
+    www.nanohub.org/tools/archimedes</a> (you will have to register to run it,
+    but it is totally FREE)</p>
+  </div>
+  <div class="table-cell image2"><a href="http://www.nanohub.org/tools/archimedes"><img
+    src="graphics/screen2.JPG"
+    alt="Archimedes screenshot sample 2" /></a>
+  </div>
+</div>
  
 <h3>
   <a href="#TOCdocumentation" id="documentation">Documentation</a>
@@ -291,7 +330,7 @@ If you have any problem do not hesitate to contact us.</p>
   <a href="mailto:jeanmichel.sellier@gmail.com">&lt;jeanmichel.sellier@gmail.com&gt;</a>.
 </p>
 
-<h3><a href="TOClinks" id="links">Links</a></h3>
+<h3><a href="#TOClinks" id="links">Links</a></h3>
 
 <p>Related projects :</p>
 <ul>
@@ -314,7 +353,7 @@ to <a href="mailto:didier@famille-link.fr">&lt;didier@famille-link.fr&gt;</a>.
 
 <p>Please see the <a
 href="/server/standards/README.translations.html">Translations
-README</a> for information on coordinating and submitting translations
+README</a> for information on coordinating and contributing translations
 of this article.</p>
 </div>
 
@@ -345,7 +384,7 @@ Commons Attribution-NoDerivatives 4.0 International License</a>.</p>
 
 <p class="unprintable">Updated:
 <!-- timestamp start -->
-$Date: 2016/06/01 17:16:28 $
+$Date: 2021/01/03 17:13:45 $
 <!-- timestamp end -->
 </p>
 </div>
